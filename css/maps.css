@@ -1,0 +1,43 @@
+body {
+background-color: transparent;
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.navbar {
+    margin-top: 10px;
+    margin-bottom: 10px;
+	}
+.navbar .navbar-brand{	
+	color:#4CAE4C;
+	font-size: 22px;
+	}
+	
+.navbar .navbar-brand	img {
+    vertical-align: top;
+}
+
+p.text-center{
+	margin: 0 0 5px;
+}
+
+/*---- LAYOUT ----*/
+
+div#map_canvas{
+    height:500px;
+    border: 1px solid #E7E7E7;
+    width:100%;
+    min-width: 280px;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px rgba(0, 0, 0, 0.075);
+	margin: 0 0 10px;
+}
+
+/*---- MAP ----*/
+div#verfotos{
+	width: 240px;
+}
+
