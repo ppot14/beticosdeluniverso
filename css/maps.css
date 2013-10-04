@@ -24,6 +24,10 @@ p.text-center{
 	margin: 0 0 5px;
 }
 
+.bootstrap-select.btn-group, .bootstrap-select.btn-group[class*="span"] {
+    margin-bottom: 0px;
+}
+
 /*---- LAYOUT ----*/
 
 div#map_canvas{
