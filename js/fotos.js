@@ -55,7 +55,8 @@ var fotos = [
             "lugar":"San Francisco",
             "pais":"EEUU",
             "fotos":[
-               "usasanfrancisco1_5_20071104_1490693070.jpg"
+               "usasanfrancisco1_5_20071104_1490693070.jpg",
+               "usasanfrancisco2_6_20071104_1470056140.jpg"
             ]
          },
          {
@@ -465,7 +466,8 @@ var fotos = [
                "roma2_5_20071104_1812794458.jpg",
                "roma3_6_20071104_1012621451.jpg",
                "roma4_7_20071104_1013974251.jpg",
-               "roma-coliseo_2_20091003_2024799579.jpg"
+               "roma-coliseo_2_20091003_2024799579.jpg",
+               "betisvaticano_10_20090119_1045551252.jpg"
             ]
          },
          {
@@ -605,7 +607,19 @@ var fotos = [
             "lugar":"Liverpool",
             "pais":"Inglaterra",
             "fotos":[
-               "liverpool_11_20090119_1376957863.jpg"
+               "liverpool_11_20090119_1376957863.jpg",
+               "4_1_20080915_1241418608.jpg",
+               "6_2_20080915_1957017557.jpg",
+               "bufandadelbetisenlosrecuerdos_29_20080915_2058474685.jpg",
+               "johnnlennonbufandabetis_33_20080915_1134551348.jpg",
+               "luky1_38_20080915_1394092834.jpg",
+               "luky2_24_20080915_1934166533.jpg",
+               "luky2-1_23_20080915_1037967672.jpg",
+               "p35_edited_25_20080915_1640493798.jpg",
+               "p4_39_20080915_1457071075.jpg",
+               "police7_edited_26_20080915_2087714388.jpg",
+               "rimg2346_27_20080915_1497205116.jpg",
+               "rimg2369_28_20080915_2092073608.jpg"
             ]
          },
          {
@@ -716,13 +730,13 @@ var fotos = [
    {
       "longitud":"-4",
       "latitud":"40",
-      "pais":"España",
+      "pais":"EspaÃ±a",
       "lugares":[
          {
             "longitud":"-5.663",
             "latitud":"40.964",
             "lugar":"Salamanca",
-            "pais":"España",
+            "pais":"EspaÃ±a",
             "fotos":[
                "salamanca_8_20071104_1287631306.jpg"
             ]
@@ -731,7 +745,7 @@ var fotos = [
             "longitud":"-8.542",
             "latitud":"42.88",
             "lugar":"Santiago",
-            "pais":"España",
+            "pais":"EspaÃ±a",
             "fotos":[
                "santiago1_9_20071104_1426579636.jpg",
                "catedral_en_santiago_3_20080909_1151394067.jpg"
@@ -741,7 +755,7 @@ var fotos = [
             "longitud":"-3.703",
             "latitud":"40.417",
             "lugar":"Madrid",
-            "pais":"España",
+            "pais":"EspaÃ±a",
             "fotos":[
                "calderon1_1_20071104_1000242176.jpg",
                "calderon2_2_20071104_1777690252.jpg",
@@ -752,7 +766,7 @@ var fotos = [
             "longitud":"-16.641",
             "latitud":"28.268",
             "lugar":"Tenerife",
-            "pais":"España",
+            "pais":"Espaï¿½a",
             "fotos":[
                "teide_12_20071104_1312161332.jpg"
             ]
@@ -761,7 +775,7 @@ var fotos = [
             "longitud":"-6.292",
             "latitud":"36.529",
             "lugar":"Cadiz",
-            "pais":"España",
+            "pais":"EspaÃ±a",
             "fotos":[
                "beticas_en_el_trofeo_carranza_10_20071125_1455003781.jpg"
             ]
@@ -770,7 +784,7 @@ var fotos = [
             "longitud":"-1.643",
             "latitud":"42.817",
             "lugar":"Pamplona",
-            "pais":"España",
+            "pais":"EspaÃ±a",
             "fotos":[
                "pamplona-san-fermin_9_20071125_1315928450.jpg",
                "beticas_en_pamplona_11_20071125_1628144997.jpg"
@@ -780,7 +794,7 @@ var fotos = [
             "longitud":"-2.622",
             "latitud":"43.256",
             "lugar":"Bilbao",
-            "pais":"España",
+            "pais":"EspaÃ±a",
             "fotos":[
                "beticas_en_san_mames_12_20071125_1746737013.jpg"
             ]
@@ -789,7 +803,7 @@ var fotos = [
             "longitud":"-1.984",
             "latitud":"43.320",
             "lugar":"San Sebastian",
-            "pais":"España",
+            "pais":"EspaÃ±a",
             "fotos":[
                "beticas_en_san_sebastian_13_20071125_1485392620.jpg"
             ]
@@ -798,7 +812,7 @@ var fotos = [
             "longitud":"-3.808",
             "latitud":"43.460",
             "lugar":"Santander",
-            "pais":"España",
+            "pais":"EspaÃ±a",
             "fotos":[
                "beticos_en_santander_14_20071125_2049767958.jpg"
             ]
@@ -807,7 +821,7 @@ var fotos = [
             "longitud":"-5.35",
             "latitud":"36.14",
             "lugar":"Gibraltar",
-            "pais":"España",
+            "pais":"EspaÃ±a",
             "fotos":[
                "gibraltar_7_20071125_2037266723.jpg"
             ]
@@ -815,8 +829,8 @@ var fotos = [
          {
             "longitud":"-8.4",
             "latitud":"43.37",
-            "lugar":"La Coruña",
-            "pais":"España",
+            "lugar":"La CoruÃ±a",
+            "pais":"EspaÃ±a",
             "fotos":[
                "torre_de_hercules_en_a_corua_13_20080909_1993273593.jpg"
             ]
@@ -825,7 +839,7 @@ var fotos = [
             "longitud":"-8.71",
             "latitud":"42.23",
             "lugar":"Vigo",
-            "pais":"España",
+            "pais":"EspaÃ±a",
             "fotos":[
                "praia_de_samil_en_vigo_12_20080909_1616650059.jpg"
             ]
@@ -834,7 +848,7 @@ var fotos = [
             "longitud":"-5.98",
             "latitud":"37.36",
             "lugar":"Sevilla",
-            "pais":"España",
+            "pais":"EspaÃ±a",
             "fotos":[
                "yo_campo_del_betis_1_20081207_1329516078.jpg",
                "roni_verde_estadio_6_20091003_2075564595.jpg"
@@ -850,7 +864,7 @@ var fotos = [
          {
             "longitud":"11.97",
             "latitud":"57.70",
-            "lugar":"Göteborg",
+            "lugar":"Goteborg",
             "pais":"Suecia",
             "fotos":[
                "suecia1_10_20071104_1122130882.jpg",
