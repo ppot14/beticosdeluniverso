@@ -28,6 +28,14 @@ p.text-center{
     margin-bottom: 0px;
 }
 
+a {
+    color: #4CAE4C;
+}
+
+a#centrado-link{
+	font-family: 'Comfortaa';
+}
+
 /*---- LAYOUT ----*/
 
 div#map_canvas{

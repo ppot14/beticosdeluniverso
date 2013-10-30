@@ -1,11 +1,11 @@
 /*
  * Variables
  */
-var ruta = "http://www.porelbetisestoyloco.com/web";
+var ruta = "";
 
-var rutaminiaturas = "/images/galeria/miniaturas/";
+var rutaminiaturas = "./imagenes/miniaturas/";
 
-var rutaoriginales = "/images/galeria/imagenes/";
+var rutaoriginales = "./imagenes/originales/";
 
 var j = 0;
 
@@ -121,9 +121,21 @@ function pasarFoto(lugar) {
 
     $('#indice-foto').text(indiceFotoLugar[lugar.lugar] + 1);
 
-    $("#foto-bocadillo").attr("src", ruta + rutaminiaturas + lugar.fotos[indiceFotoLugar[lugar.lugar]]);
+    $("#foto-bocadillo").attr("src", ruta + rutaminiaturas + lugar.fotos[indiceFotoLugar[lugar.lugar]].archivo);
 
-    $("#enlace-foto").attr("href", ruta + rutaoriginales + lugar.fotos[indiceFotoLugar[lugar.lugar]]);
+    $("#enlace-foto").attr("href", ruta + rutaoriginales + lugar.fotos[indiceFotoLugar[lugar.lugar]].archivo);
+	
+	var fechaFoto =  lugar.fotos[indiceFotoLugar[lugar.lugar]].fecha;
+
+	var titulo = lugar.lugar;
+	
+	if(fechaFoto){
+	
+		titulo = titulo + ". Agregada el " + fechaFoto;
+	
+	}
+	
+	$("#enlace-foto").attr("title", titulo);
 
     configurarPaginacionFotos(lugar);
 
@@ -145,9 +157,21 @@ function rellenarBocadillo(lugarTexto) {
 
     $('#enlace-pais').text(pais.pais);
 
-    $("#foto-bocadillo").attr("src", ruta + rutaminiaturas + lugar.fotos[0]);
+    $("#foto-bocadillo").attr("src", ruta + rutaminiaturas + lugar.fotos[0].archivo);
 
-    $("#enlace-foto").attr("href", ruta + rutaoriginales + lugar.fotos[0]);
+    $("#enlace-foto").attr("href", ruta + rutaoriginales + lugar.fotos[0].archivo);
+	
+	var fechaFoto =  lugar.fotos[indiceFotoLugar[lugar.lugar]].fecha;
+
+	var titulo = lugar.lugar;
+	
+	if(fechaFoto){
+	
+		titulo = titulo + ". Agregada el " + fechaFoto;
+	
+	}
+	
+	$("#enlace-foto").attr("title", titulo);
 
     if (lugar.fotos.length > 1) {
 
@@ -479,7 +503,7 @@ function inicializarMapa(mapa_canvas) {
 
     } catch (e) {
 
-        alert("Imposible listar lugares y paises, intentelo en otro momento:\n" + e);
+        alert("Imposible mostrar lugares y paises, intentelo en otro momento:\n" + e);
 
         return null;
 
