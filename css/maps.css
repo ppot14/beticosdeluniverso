@@ -32,6 +32,10 @@ a {
     color: #4CAE4C;
 }
 
+a:hover a:active {
+    color: #5E5E5E;
+}
+
 a#centrado-link{
 	font-family: 'Comfortaa';
 }
@@ -51,5 +55,37 @@ div#map_canvas{
 /*---- MAP ----*/
 div#verfotos{
 	width: 240px;
+}
+
+div#enlace-foto {
+    background-position:center;
+    display: table;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    width: 260px;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px rgba(0, 0, 0, 0.075);
+}
+
+div#cabecerafoto {
+/*    display: table-cell;
+    vertical-align: bottom;*/
+}
+
+div#linkFrame {
+    /*border-top: 7px solid;*/
+    display: table;
+    height: 139px;
+    vertical-align: top;
+    width: 260px;
+}
+
+div#linkFrame:hover {
+    border-top: 7px solid #4CAE4C;
+}
+
+div#cabecerafoto .pager{
+	margin: 5px;
 }
 

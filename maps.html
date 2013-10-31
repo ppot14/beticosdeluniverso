@@ -10,13 +10,13 @@
         <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
         <script src="js/json2.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/lightbox-2.6.min.js" type="text/javascript"></script>
+        <!--<script src="js/lightbox-2.6.min.js" type="text/javascript"></script>-->
         <script src="js/fotos.js" type="text/javascript"></script>
         <script src="js/beticos.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css"/>
-        <link rel="stylesheet" href="css/lightbox.css" type="text/css"/>
+        <!--<link rel="stylesheet" href="css/lightbox.css" type="text/css"/>-->
         <link rel="stylesheet" href="css/maps.css" type="text/css"/>
         <link rel="icon" type="image/ico" href="img/logo.ico"/>
 		
@@ -212,18 +212,20 @@
             <div id="verfotos" align="center">
                 <div class="marcofoto" class="thumbnail">
                     <div class="caption"><span id="lugar">Lugar</span> - <a id="enlace-pais" href="#" >Pais</a></div>
-                    <a id="enlace-foto" href="img/no-foto-miniatura.jpg" data-lightbox="image-1" title="B&eacute;ticos del Universo">
-						<img id="foto-bocadillo" class="img-thumbnail" src="img/no-foto-miniatura.jpg">
-                    </a>
-                </div>
-                <div id="cabecerafoto">
-                    <ul class="pager">
-                        <li class="previous disabled" id="anterior"><a id="enlace-anterior" href="#">&lsaquo;</a></li>
-                        <li  id="numero-fotos"  class="disabled">
-                            <a href="#"  class="btn btn-link"><span id="indice-foto" class="badge">99</span> / <span id="total-foto" class="badge">99</span></a>
-                        </li>
-                        <li class="next disabled" id="siguiente"><a id="enlace-siguiente" href="#">&rsaquo;</a></li>
-                    </ul>
+                    <div id="enlace-foto" style="background-image:url(img/no-foto-miniatura.jpg);">
+                        <div id="linkFrame" onclick="javascript:openLightbox();"></div>	
+                        <div id="cabecerafoto">
+                                <ul class="pager">
+                                  <li class="previous disabled" id="anterior"><a id="enlace-anterior" href="#">&lsaquo;</a></li>
+                                  <li  id="numero-fotos"  class="disabled">
+                                        <a href="#"  class="btn btn-link"><span id="indice-foto" class="badge">99</span> / <span id="total-foto" class="badge">99</span></a>
+                                  </li>
+                                  <li class="next disabled" id="siguiente"><a id="enlace-siguiente" href="#">&rsaquo;</a></li>
+                                </ul>
+                        </div>
+
+                        <!--<img id="foto-bocadillo" class="img-thumbnail" src="img/no-foto-miniatura.jpg">-->
+                    </div>
                 </div>
             </div>
         </div>

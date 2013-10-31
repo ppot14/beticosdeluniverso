@@ -3,7 +3,7 @@
  */
 var ruta = "";
 
-var rutaminiaturas = "./imagenes/miniaturas/";
+var rutaminiaturas = "./imagenes/medianas/";
 
 var rutaoriginales = "./imagenes/originales/";
 
@@ -31,7 +31,7 @@ function anterior(lugar) {
 
     indiceFotoLugar[lugar.lugar] = indiceFotoLugar[lugar.lugar] - 1;
 
-    pasarFoto(lugar);
+    renderPicture(lugar);
 
 }
 
@@ -39,7 +39,7 @@ function siguiente(lugar) {
 
     indiceFotoLugar[lugar.lugar] = indiceFotoLugar[lugar.lugar] + 1;
 
-    pasarFoto(lugar);
+    renderPicture(lugar);
 
 }
 
@@ -117,37 +117,44 @@ function configurarPaginacionFotos(lugar) {
 
 }
 
-function pasarFoto(lugar) {
+function renderPicture(lugar) {
 
     $('#indice-foto').text(indiceFotoLugar[lugar.lugar] + 1);
 
-    $("#foto-bocadillo").attr("src", ruta + rutaminiaturas + lugar.fotos[indiceFotoLugar[lugar.lugar]].archivo);
+//    $("#foto-bocadillo").attr("src",ruta + rutaminiaturas + lugar.fotos[indiceFotoLugar[lugar.lugar]]);
 
-    $("#enlace-foto").attr("href", ruta + rutaoriginales + lugar.fotos[indiceFotoLugar[lugar.lugar]].archivo);
-	
-	var fechaFoto =  lugar.fotos[indiceFotoLugar[lugar.lugar]].fecha;
+//    $("#enlace-foto").attr("href",ruta + rutaoriginales + lugar.fotos[indiceFotoLugar[lugar.lugar]]);
 
-	var titulo = lugar.lugar;
-	
-	if(fechaFoto){
-	
-		titulo = titulo + ". Agregada el " + fechaFoto;
-	
-	}
-	
-	$("#enlace-foto").attr("title", titulo);
+    $("#enlace-foto").css("background-image",'url('+ruta + rutaoriginales + lugar.fotos[indiceFotoLugar[lugar.lugar]].archivo+')');
+
+//    var fechaFoto =  lugar.fotos[indiceFotoLugar[lugar.lugar]].fecha;
+//
+//    var titulo = lugar.lugar;
+//
+//    if(fechaFoto){
+//
+//            titulo = titulo + ". Agregada el " + fechaFoto;
+//
+//    }
+//
+//    $("#enlace-foto").attr("title", titulo);
 
     configurarPaginacionFotos(lugar);
 
 }
 
+function openLightbox(){
+    
+    console.debug('enlace-foto.css '+$("#enlace-foto").css("background-image"));
+    
+}
+
 function rellenarBocadillo(lugarTexto) {
 
+    //InfoWindow initialization
     var lugar = buscar(lugarTexto, true);
 
     indiceFotoLugar[lugar.lugar] = 0;
-
-    $('#indice-foto').text(1);
 
     $('#total-foto').text(lugar.fotos.length);
 
@@ -157,29 +164,8 @@ function rellenarBocadillo(lugarTexto) {
 
     $('#enlace-pais').text(pais.pais);
 
-    $("#foto-bocadillo").attr("src", ruta + rutaminiaturas + lugar.fotos[0].archivo);
-
-    $("#enlace-foto").attr("href", ruta + rutaoriginales + lugar.fotos[0].archivo);
-	
-	var fechaFoto =  lugar.fotos[indiceFotoLugar[lugar.lugar]].fecha;
-
-	var titulo = lugar.lugar;
-	
-	if(fechaFoto){
-	
-		titulo = titulo + ". Agregada el " + fechaFoto;
-	
-	}
-	
-	$("#enlace-foto").attr("title", titulo);
-
-    if (lugar.fotos.length > 1) {
-
-        $("#siguiente").removeClass("disabled");
-
-    }
-
-    configurarPaginacionFotos(lugar);
+    //Render first picture
+    renderPicture(lugar);
 
     $("#enlace-pais").click(function() {
 
