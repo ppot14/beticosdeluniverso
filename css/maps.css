@@ -1,5 +1,5 @@
 body {
-background-color: transparent;
+    background-color: transparent;
 }
 
 .row {
@@ -10,18 +10,17 @@ background-color: transparent;
 .navbar {
     margin-top: 10px;
     margin-bottom: 10px;
-	}
+}
 .navbar .navbar-brand{	
-	color:#4CAE4C;
-	font-size: 22px;
-	}
+    font-size: 22px;
+}
 	
 .navbar .navbar-brand	img {
     vertical-align: top;
 }
 
 p.text-center{
-	margin: 0 0 5px;
+    margin: 0 0 5px;
 }
 
 .bootstrap-select.btn-group, .bootstrap-select.btn-group[class*="span"] {
@@ -37,7 +36,7 @@ a:hover a:active {
 }
 
 a#centrado-link{
-	font-family: 'Comfortaa';
+    font-family: 'Comfortaa';
 }
 
 /*---- LAYOUT ----*/
@@ -48,8 +47,9 @@ div#map_canvas{
     width:100%;
     min-width: 280px;
     border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px rgba(0, 0, 0, 0.075);
-	margin: 0 0 10px;
+    margin: 0 0 10px;
 }
 
 /*---- MAP ----*/
@@ -65,9 +65,9 @@ div#enlace-foto {
     position: relative;
     width: 260px;
     border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px rgba(0, 0, 0, 0.075);
 }
-
 div#cabecerafoto {
 /*    display: table-cell;
     vertical-align: bottom;*/
@@ -79,13 +79,19 @@ div#linkFrame {
     height: 139px;
     vertical-align: top;
     width: 260px;
+    text-align: center;
+    color: transparent;
+    border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px;
 }
 
 div#linkFrame:hover {
-    border-top: 7px solid #4CAE4C;
+    border: 3px solid #4CAE4C;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
 }
 
 div#cabecerafoto .pager{
-	margin: 5px;
+    margin: 5px;
 }
 
