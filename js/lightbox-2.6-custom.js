@@ -2,6 +2,8 @@
 /*
 Lightbox v2.6
 by Lokesh Dhakar - http://www.lokeshdhakar.com
+Custom version
+by Pepe Valle Mazuelos - ppot14@hotmail.com
 
 For more information, visit:
 http://lokeshdhakar.com/projects/lightbox2/
@@ -27,7 +29,7 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
     }
 
     LightboxOptions.prototype.albumLabel = function(curImageNum, albumSize) {
-      return "Image " + curImageNum + " of " + albumSize;
+      return "Foto " + curImageNum + " de " + albumSize;
     };
 
     return LightboxOptions;
@@ -37,7 +39,6 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
   Lightbox = (function() {
     function Lightbox(options) {
       this.options = options;
-      this.album = [];
       this.currentImageIndex = void 0;
       this.init();
     }
@@ -49,8 +50,8 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
 
     Lightbox.prototype.enable = function() {
       var _this = this;
-      return $('body').on('click', 'a[rel^=lightbox], area[rel^=lightbox], a[data-lightbox], area[data-lightbox]', function(e) {
-        _this.start($(e.currentTarget));
+      return $('body').on('click', 'div#link-frame', function(e) {
+        _this.start();
         return false;
       });
     };
@@ -84,14 +85,14 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
       });
       this.$lightbox.find('.lb-prev').on('click', function() {
         if (_this.currentImageIndex === 0) {
-          _this.changeImage(_this.album.length - 1);
+          _this.changeImage(currentPlace.pictures.length - 1);
         } else {
           _this.changeImage(_this.currentImageIndex - 1);
         }
         return false;
       });
       this.$lightbox.find('.lb-next').on('click', function() {
-        if (_this.currentImageIndex === _this.album.length - 1) {
+        if (_this.currentImageIndex === currentPlace.pictures.length - 1) {
           _this.changeImage(0);
         } else {
           _this.changeImage(_this.currentImageIndex + 1);
@@ -104,48 +105,14 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
       });
     };
 
-    Lightbox.prototype.start = function($link) {
-      var $window, a, dataLightboxValue, i, imageNumber, left, top, _i, _j, _len, _len1, _ref, _ref1;
+    Lightbox.prototype.start = function() {
+      var $window, imageNumber, left, top;
       $(window).on("resize", this.sizeOverlay);
       $('select, object, embed').css({
         visibility: "hidden"
       });
       this.$overlay.width($(document).width()).height($(document).height()).fadeIn(this.options.fadeDuration);
-      this.album = [];
-      imageNumber = 0;
-      dataLightboxValue = $link.attr('data-lightbox');
-      if (dataLightboxValue) {
-        _ref = $($link.prop("tagName") + '[data-lightbox="' + dataLightboxValue + '"]');
-        for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
-          a = _ref[i];
-          this.album.push({
-            link: $(a).attr('href'),
-            title: $(a).attr('title')
-          });
-          if ($(a).attr('href') === $link.attr('href')) {
-            imageNumber = i;
-          }
-        }
-      } else {
-        if ($link.attr('rel') === 'lightbox') {
-          this.album.push({
-            link: $link.attr('href'),
-            title: $link.attr('title')
-          });
-        } else {
-          _ref1 = $($link.prop("tagName") + '[rel="' + $link.attr('rel') + '"]');
-          for (i = _j = 0, _len1 = _ref1.length; _j < _len1; i = ++_j) {
-            a = _ref1[i];
-            this.album.push({
-              link: $(a).attr('href'),
-              title: $(a).attr('title')
-            });
-            if ($(a).attr('href') === $link.attr('href')) {
-              imageNumber = i;
-            }
-          }
-        }
-      }
+      imageNumber = pictureIndexByPlaces[currentPlace.place];
       $window = $(window);
       top = $window.scrollTop() + $window.height() / 10;
       left = $window.scrollLeft();
@@ -169,7 +136,7 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
       preloader = new Image();
       preloader.onload = function() {
         var $preloader, imageHeight, imageWidth, maxImageHeight, maxImageWidth, windowHeight, windowWidth;
-        $image.attr('src', _this.album[imageNumber].link);
+        $image.attr('src', (path + originalPicturePath + currentPlace.pictures[imageNumber].file));
         $preloader = $(preloader);
         $image.width(preloader.width);
         $image.height(preloader.height);
@@ -194,7 +161,7 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
         }
         return _this.sizeContainer($image.width(), $image.height());
       };
-      preloader.src = this.album[imageNumber].link;
+      preloader.src = (path + originalPicturePath + currentPlace.pictures[imageNumber].file);
       this.currentImageIndex = imageNumber;
     };
 
@@ -232,14 +199,14 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
 
     Lightbox.prototype.updateNav = function() {
       this.$lightbox.find('.lb-nav').show();
-      if (this.album.length > 1) {
+      if (currentPlace.pictures.length > 1) {
         if (this.options.wrapAround) {
           this.$lightbox.find('.lb-prev, .lb-next').show();
         } else {
           if (this.currentImageIndex > 0) {
             this.$lightbox.find('.lb-prev').show();
           }
-          if (this.currentImageIndex < this.album.length - 1) {
+          if (this.currentImageIndex < currentPlace.pictures.length - 1) {
             this.$lightbox.find('.lb-next').show();
           }
         }
@@ -248,11 +215,12 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
 
     Lightbox.prototype.updateDetails = function() {
       var _this = this;
-      if (typeof this.album[this.currentImageIndex].title !== 'undefined' && this.album[this.currentImageIndex].title !== "") {
-        this.$lightbox.find('.lb-caption').html(this.album[this.currentImageIndex].title).fadeIn('fast');
+      var title = getPictureTitle(this.currentImageIndex);
+      if (typeof title !== 'undefined' && title !== "") {
+        this.$lightbox.find('.lb-caption').html(title).fadeIn('fast');
       }
-      if (this.album.length > 1 && this.options.showImageNumberLabel) {
-        this.$lightbox.find('.lb-number').text(this.options.albumLabel(this.currentImageIndex + 1, this.album.length)).fadeIn('fast');
+      if (currentPlace.pictures.length > 1 && this.options.showImageNumberLabel) {
+        this.$lightbox.find('.lb-number').text(this.options.albumLabel(this.currentImageIndex + 1, currentPlace.pictures.length)).fadeIn('fast');
       } else {
         this.$lightbox.find('.lb-number').hide();
       }
@@ -264,13 +232,13 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
 
     Lightbox.prototype.preloadNeighboringImages = function() {
       var preloadNext, preloadPrev;
-      if (this.album.length > this.currentImageIndex + 1) {
+      if (currentPlace.pictures.length > this.currentImageIndex + 1) {
         preloadNext = new Image();
-        preloadNext.src = this.album[this.currentImageIndex + 1].link;
+        preloadNext.src = currentPlace.pictures[this.currentImageIndex + 1].file;
       }
       if (this.currentImageIndex > 0) {
         preloadPrev = new Image();
-        preloadPrev.src = this.album[this.currentImageIndex - 1].link;
+        preloadPrev.src = currentPlace.pictures[this.currentImageIndex - 1].file;
       }
     };
 
@@ -296,13 +264,15 @@ Licensed under the Creative Commons Attribution 2.5 License - http://creativecom
           this.changeImage(this.currentImageIndex - 1);
         }
       } else if (key === 'n' || keycode === KEYCODE_RIGHTARROW) {
-        if (this.currentImageIndex !== this.album.length - 1) {
+        if (this.currentImageIndex !== currentPlace.pictures.length - 1) {
           this.changeImage(this.currentImageIndex + 1);
         }
       }
     };
 
     Lightbox.prototype.end = function() {
+      $("#picture-div").appendTo("#invisible");
+      infoWindow.close();
       this.disableKeyboardNav();
       $(window).off("resize", this.sizeOverlay);
       this.$lightbox.fadeOut(this.options.fadeDuration);

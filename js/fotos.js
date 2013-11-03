@@ -1,24 +1,24 @@
-var fotos = [
+var picturesJson = [
    {
       "longitud":"-80",
       "latitud":"21.5",
-      "pais":"Cuba",
-      "lugares":[
+      "country":"Cuba",
+      "places":[
          {
             "longitud":"-82.21",
             "latitud":"23.07",
-            "lugar":"La Habana",
-            "fotos":[
-				{"archivo":"cuba2_6_20071104_1888135743.jpg"},
-				{"archivo":"cuba_che_11_20081013_1221392720.jpg"}
+            "place":"La Habana",
+            "pictures":[
+				{"file":"cuba2_6_20071104_1888135743.jpg"},
+				{"file":"cuba_che_11_20081013_1221392720.jpg"}
             ]
          },
          {
             "longitud":"-81.36",
             "latitud":"23.12",
-            "lugar":"Varadero",
-            "fotos":[
-				{"archivo":"cuba1_5_20071104_1524931379.jpg"}
+            "place":"Varadero",
+            "pictures":[
+				{"file":"cuba1_5_20071104_1524931379.jpg"}
             ]
          }
       ]
@@ -26,90 +26,90 @@ var fotos = [
    {
       "longitud":"-97",
       "latitud":"38",
-      "pais":"EEUU",
-      "lugares":[
+      "country":"EEUU",
+      "places":[
          {
             "longitud":"-74.045",
             "latitud":"40.689",
-            "lugar":"Nueva York",
-            "fotos":[
-				{"archivo":"usanewyork1_1_20071104_1753024709.jpg"},
-				{"archivo":"usanewyork2_2_20071104_1544999203.jpg"},
-				{"archivo":"timesquare_9_20080909_1853099938.jpg"},
-				{"archivo":"new_york_0607_063_8_20080909_1571376330.jpg"},
-				{"archivo":"new_york_0607_058_7_20080909_1986432275.jpg"},
-				{"archivo":"new_york_0607_057_6_20080909_1243362056.jpg"},
-				{"archivo":"new_york_0607_037_5_20080909_1537171389.jpg"},
-				{"archivo":"new_york_0607_034_4_20080909_1956544308.jpg"},
-				{"archivo":"new_york_0607_021_3_20080909_1823651124.jpg"},
-				{"archivo":"new_york_0607_020_2_20080909_1704640514.jpg"},
-				{"archivo":"new_york_0607_018_1_20080909_1052963336.jpg"},
-				{"archivo":"new_york_-_times_square_1_20091003_1393672044.jpg"},
-				{"archivo":"ny_5_20091003_1197704304.jpg"}
+            "place":"Nueva York",
+            "pictures":[
+				{"file":"ny_5_20091003_1197704304.jpg"},
+				{"file":"usanewyork1_1_20071104_1753024709.jpg"},
+				{"file":"usanewyork2_2_20071104_1544999203.jpg"},
+				{"file":"timesquare_9_20080909_1853099938.jpg"},
+				{"file":"new_york_0607_063_8_20080909_1571376330.jpg"},
+				{"file":"new_york_0607_058_7_20080909_1986432275.jpg"},
+				{"file":"new_york_0607_057_6_20080909_1243362056.jpg"},
+				{"file":"new_york_0607_037_5_20080909_1537171389.jpg"},
+				{"file":"new_york_0607_034_4_20080909_1956544308.jpg"},
+				{"file":"new_york_0607_021_3_20080909_1823651124.jpg"},
+				{"file":"new_york_0607_020_2_20080909_1704640514.jpg"},
+				{"file":"new_york_0607_018_1_20080909_1052963336.jpg"},
+				{"file":"new_york_-_times_square_1_20091003_1393672044.jpg"}
             ]
          },
          {
             "longitud":"-122.477",
             "latitud":"37.810",
-            "lugar":"San Francisco",
-            "fotos":[
-				{"archivo":"usasanfrancisco1_5_20071104_1490693070.jpg"},
-				{"archivo":"usasanfrancisco2_6_20071104_1470056140.jpg"}
+            "place":"San Francisco",
+            "pictures":[
+				{"file":"usasanfrancisco1_5_20071104_1490693070.jpg"},
+				{"file":"usasanfrancisco2_6_20071104_1470056140.jpg"}
             ]
          },
          {
             "longitud":"-77.0121",
             "latitud":"38.8905",
-            "lugar":"Washington",
-            "fotos":[
-				{"archivo":"usacasablanca1_1_20071104_1071559567.jpg"},
-				{"archivo":"usacasablanca2_2_20071104_1876191796.jpg"},
-				{"archivo":"washington_-_obelisco_cristian_2_20091003_1549557796.jpg"},
-				{"archivo":"washington_-_obelisco_felipe_3_20091003_1324729789.jpg"},
-				{"archivo":"washington_-_capitolio_6_20091003_1089496438.jpg"}
+            "place":"Washington",
+            "pictures":[
+				{"file":"usacasablanca1_1_20071104_1071559567.jpg"},
+				{"file":"usacasablanca2_2_20071104_1876191796.jpg"},
+				{"file":"washington_-_obelisco_cristian_2_20091003_1549557796.jpg"},
+				{"file":"washington_-_obelisco_felipe_3_20091003_1324729789.jpg"},
+				{"file":"washington_-_capitolio_6_20091003_1089496438.jpg"}
             ]
          },
          {
             "longitud":"-79.0753",
             "latitud":"43.0787",
-            "lugar":"Cataratas del Niagara",
-            "fotos":[
-				{"archivo":"usaniagara_3_20071104_1624087684.jpg"},
-				{"archivo":"canada_niagara_6_20081013_1182588664.jpg"},
-				{"archivo":"canada_niagara2_7_20081013_1328306382.jpg"},
-				{"archivo":"canada_niagara3_8_20081013_1869223152.jpg"}
+            "place":"Cataratas del Niagara",
+            "pictures":[
+				{"file":"usaniagara_3_20071104_1624087684.jpg"},
+				{"file":"canada_niagara_6_20081013_1182588664.jpg"},
+				{"file":"canada_niagara2_7_20081013_1328306382.jpg"},
+				{"file":"canada_niagara3_8_20081013_1869223152.jpg"}
             ]
          },
          {
             "longitud":"-71.0569",
             "latitud":"42.3587",
-            "lugar":"Boston",
-            "fotos":[
-				{"archivo":"usaredsoxboston_4_20071104_1664919441.jpg"}
+            "place":"Boston",
+            "pictures":[
+				{"file":"usaredsoxboston_4_20071104_1664919441.jpg"}
             ]
          },
          {
             "longitud":"-117.914",
             "latitud":"33.831",
-            "lugar":"Anaheim",
-            "fotos":[
-				{"archivo":"anaheim-california_1_20071125_1168417664.jpg"}
+            "place":"Anaheim",
+            "pictures":[
+				{"file":"anaheim-california_1_20071125_1168417664.jpg"}
             ]
          },
          {
             "longitud":"-75.161",
             "latitud":"39.952",
-            "lugar":"Philadelphia",
-            "fotos":[
-				{"archivo":"philadelphia_4_20071125_1778289798.jpg"}
+            "place":"Philadelphia",
+            "pictures":[
+				{"file":"philadelphia_4_20071125_1778289798.jpg"}
             ]
          },
          {
             "longitud":"-122.33",
             "latitud":"47.602",
-            "lugar":"Seattle",
-            "fotos":[
-				{"archivo":"seattle_6_20071125_1927142274.jpg"}
+            "place":"Seattle",
+            "pictures":[
+				{"file":"seattle_6_20071125_1927142274.jpg"}
             ]
          }
       ]
@@ -117,17 +117,17 @@ var fotos = [
    {
       "longitud":"36",
       "latitud":"31",
-      "pais":"Jordania",
-      "lugares":[
+      "country":"Jordania",
+      "places":[
          {
             "longitud":"35.451",
             "latitud":"30.322",
-            "lugar":"Petra",
-            "fotos":[
-				{"archivo":"jordania_1_20071104_1604353841.jpg"},
-				{"archivo":"jordania2_2_20071104_1259193587.jpg"},
-				{"archivo":"jordania3_1_20071104_1949907103.jpg"},
-				{"archivo":"jordania4_4_20071104_1263293248.jpg"}
+            "place":"Petra",
+            "pictures":[
+				{"file":"jordania_1_20071104_1604353841.jpg"},
+				{"file":"jordania2_2_20071104_1259193587.jpg"},
+				{"file":"jordania3_1_20071104_1949907103.jpg"},
+				{"file":"jordania4_4_20071104_1263293248.jpg"}
             ]
          }
       ]
@@ -135,15 +135,15 @@ var fotos = [
    {
       "longitud":"38",
       "latitud":"1",
-      "pais":"Kenia",
-      "lugares":[
+      "country":"Kenia",
+      "places":[
          {
             "longitud":"36.7847",
             "latitud":"-1.2635",
-            "lugar":"Nairobi",
-            "fotos":[
-				{"archivo":"masaiplaya_3_20071104_1108694031.jpg"},
-				{"archivo":"masais_4_20071104_1966393287.jpg"}
+            "place":"Nairobi",
+            "pictures":[
+				{"file":"masaiplaya_3_20071104_1108694031.jpg"},
+				{"file":"masais_4_20071104_1966393287.jpg"}
             ]
          }
       ]
@@ -151,17 +151,17 @@ var fotos = [
    {
       "longitud":"106",
       "latitud":"16",
-      "pais":"Vietnam",
-      "lugares":[
+      "country":"Vietnam",
+      "places":[
          {
             "longitud":"106.6529",
             "latitud":"10.7581",
-            "lugar":"Saigon",
-            "fotos":[
-				{"archivo":"saigon1_5_20071104_1796864258.jpg"},
-				{"archivo":"saigon2_6_20071104_1359801891.jpg"},
-				{"archivo":"saigon3_7_20071104_1975065053.jpg"},
-				{"archivo":"saigonimgp1647_1_20090119_1461079847.jpg"}
+            "place":"Saigon",
+            "pictures":[
+				{"file":"saigon1_5_20071104_1796864258.jpg"},
+				{"file":"saigon2_6_20071104_1359801891.jpg"},
+				{"file":"saigon3_7_20071104_1975065053.jpg"},
+				{"file":"saigonimgp1647_1_20090119_1461079847.jpg"}
             ]
          }
       ]
@@ -169,15 +169,15 @@ var fotos = [
    {
       "longitud":"30",
       "latitud":"27",
-      "pais":"Egipto",
-      "lugares":[
+      "country":"Egipto",
+      "places":[
          {
             "longitud":"31.1342",
             "latitud":"29.9716",
-            "lugar":"Al-Qahirah",
-            "fotos":[
-				{"archivo":"egipto1_1_20071104_1282258264.jpg"},
-				{"archivo":"egipto2_2_20071104_2053897273.jpg"}
+            "place":"Al-Qahirah",
+            "pictures":[
+				{"file":"egipto1_1_20071104_1282258264.jpg"},
+				{"file":"egipto2_2_20071104_2053897273.jpg"}
             ]
          }
       ]
@@ -185,14 +185,14 @@ var fotos = [
    {
       "longitud":"55.6667",
       "latitud":"-4.5833",
-      "pais":"Seychelles",
-      "lugares":[
+      "country":"Seychelles",
+      "places":[
          {
             "longitud":"55.4916",
             "latitud":"-4.6791",
-            "lugar":"Islas Seychelles",
-            "fotos":[
-				{"archivo":"seychelles1_5_20071104_1495609428.jpg"}
+            "place":"Islas Seychelles",
+            "pictures":[
+				{"file":"seychelles1_5_20071104_1495609428.jpg"}
             ]
          }
       ]
@@ -200,14 +200,14 @@ var fotos = [
    {
       "longitud":"-76",
       "latitud":"-10",
-      "pais":"Peru",
-      "lugares":[
+      "country":"Peru",
+      "places":[
          {
             "longitud":"-72.5456",
             "latitud":"-13.1645",
-            "lugar":"Machu Pichu",
-            "fotos":[
-				{"archivo":"perumachupichu_8_20071104_1789986305.jpg"}
+            "place":"Machu Pichu",
+            "pictures":[
+				{"file":"perumachupichu_8_20071104_1789986305.jpg"}
             ]
          }
       ]
@@ -215,20 +215,20 @@ var fotos = [
    {
       "longitud":"-61.3333",
       "latitud":"19",
-      "pais":"Republica Dominicana",
-      "lugares":[
+      "country":"Republica Dominicana",
+      "places":[
          {
             "longitud":"-68.3614",
             "latitud":"18.5683",
-            "lugar":"Punta Cana",
-            "fotos":[
-				{"archivo":"puntacana1_9_20071104_1459090972.jpg"},
-				{"archivo":"puntacana2_10_20071104_1717496567.jpg"},
-				{"archivo":"puntacana3_11_20071104_1282394305.jpg"},
-				{"archivo":"puntacana4_12_20071104_1314390677.jpg"},
-				{"archivo":"puntacana5_13_20071104_1355348247.jpg"},
-				{"archivo":"puntacana6_14_20071104_1619904483.jpg"},
-				{"archivo":"puntacana7_1_20071104_1551551280.jpg"}
+            "place":"Punta Cana",
+            "pictures":[
+				{"file":"puntacana1_9_20071104_1459090972.jpg"},
+				{"file":"puntacana2_10_20071104_1717496567.jpg"},
+				{"file":"puntacana3_11_20071104_1282394305.jpg"},
+				{"file":"puntacana4_12_20071104_1314390677.jpg"},
+				{"file":"puntacana5_13_20071104_1355348247.jpg"},
+				{"file":"puntacana6_14_20071104_1619904483.jpg"},
+				{"file":"puntacana7_1_20071104_1551551280.jpg"}
             ]
          }
       ]
@@ -236,15 +236,15 @@ var fotos = [
    {
       "longitud":"-64",
       "latitud":"-34",
-      "pais":"Argentina",
-      "lugares":[
+      "country":"Argentina",
+      "places":[
          {
             "longitud":"-70.1534",
             "latitud":"-53.1534",
-            "lugar":"Bahia Onelli",
-            "fotos":[
-				{"archivo":"argentina1_1_20071104_1959105882.jpg"},
-				{"archivo":"bahia-onelli-argentina_2_20071125_1887995185.jpg"}
+            "place":"Bahia Onelli",
+            "pictures":[
+				{"file":"argentina1_1_20071104_1959105882.jpg"},
+				{"file":"bahia-onelli-argentina_2_20071125_1887995185.jpg"}
             ]
          }
       ]
@@ -252,51 +252,51 @@ var fotos = [
    {
       "longitud":"-95",
       "latitud":"60",
-      "pais":"Canada",
-      "lugares":[
+      "country":"Canada",
+      "places":[
          {
             "longitud":"-73.5519",
             "latitud":"45.5578",
-            "lugar":"Montreal",
-            "fotos":[
-				{"archivo":"canadaolimpicomontreal_2_20071104_1715597437.jpg"},
-				{"archivo":"canada_montreal_4_20081013_1951150797.jpg"},
-				{"archivo":"canada_montreal2_5_20081013_1939088559.jpg"}
+            "place":"Montreal",
+            "pictures":[
+				{"file":"canadaolimpicomontreal_2_20071104_1715597437.jpg"},
+				{"file":"canada_montreal_4_20081013_1951150797.jpg"},
+				{"file":"canada_montreal2_5_20081013_1939088559.jpg"}
             ]
          },
          {
             "longitud":"-79.3884",
             "latitud":"43.6448",
-            "lugar":"Toronto",
-            "fotos":[
-				{"archivo":"canadatoronto_3_20071104_1691266413.jpg"},
-				{"archivo":"canada_toronto_9_20081013_2064389923.jpg"},
-				{"archivo":"canada_toronto2_10_20081013_1328010228.jpg"}
+            "place":"Toronto",
+            "pictures":[
+				{"file":"canadatoronto_3_20071104_1691266413.jpg"},
+				{"file":"canada_toronto_9_20081013_2064389923.jpg"},
+				{"file":"canada_toronto2_10_20081013_1328010228.jpg"}
             ]
          },
          {
             "longitud":"-75.7",
             "latitud":"45.42",
-            "lugar":"Otawa",
-            "fotos":[
-				{"archivo":"canada_otawa_2_20081013_1058259743.jpg"},
-				{"archivo":"canada_otawa2_3_20081013_2046567497.jpg"}
+            "place":"Otawa",
+            "pictures":[
+				{"file":"canada_otawa_2_20081013_1058259743.jpg"},
+				{"file":"canada_otawa2_3_20081013_2046567497.jpg"}
             ]
          },
          {
             "longitud":"-71.2",
             "latitud":"46.8",
-            "lugar":"Quebec",
-            "fotos":[
-				{"archivo":"canada_momorency_1_20081013_1123729160.jpg"}
+            "place":"Quebec",
+            "pictures":[
+				{"file":"canada_momorency_1_20081013_1123729160.jpg"}
             ]
          },
          {
             "longitud":"-123.14",
             "latitud":"49.26",
-            "lugar":"Vancouver",
-            "fotos":[
-				{"archivo":"canada_place_1_20081207_1604574752.jpg"}
+            "place":"Vancouver",
+            "pictures":[
+				{"file":"canada_place_1_20081207_1604574752.jpg"}
             ]
          }
       ]
@@ -304,14 +304,14 @@ var fotos = [
    {
       "longitud":"-77.5",
       "latitud":"18.25",
-      "pais":"Jamaica",
-      "lugares":[
+      "country":"Jamaica",
+      "places":[
          {
             "longitud":"-76.7923",
             "latitud":"17.9924",
-            "lugar":"Kingston",
-            "fotos":[
-				{"archivo":"jamaica_7_20071104_1145106121.jpg"}
+            "place":"Kingston",
+            "pictures":[
+				{"file":"jamaica_7_20071104_1145106121.jpg"}
             ]
          }
       ]
@@ -319,37 +319,37 @@ var fotos = [
    {
       "longitud":"9",
       "latitud":"51",
-      "pais":"Alemania",
-      "lugares":[
+      "country":"Alemania",
+      "places":[
          {
             "longitud":"10.7",
             "latitud":"47.569",
-            "lugar":"Fussen",
-            "fotos":[
-				{"archivo":"alemaniafussen1_1_20071104_1093402271.jpg"},
-				{"archivo":"alemaniafussen2_2_20071104_1951938353.jpg"}
+            "place":"Fussen",
+            "pictures":[
+				{"file":"alemaniafussen1_1_20071104_1093402271.jpg"},
+				{"file":"alemaniafussen2_2_20071104_1951938353.jpg"}
             ]
          },
          {
             "longitud":"13.411",
             "latitud":"52.522",
-            "lugar":"Berlin",
-            "fotos":[
-				{"archivo":"berlinaeropuerto_9_20071104_2032201317.jpg"},
-				{"archivo":"berlinelmuro_10_20071104_1296184335.jpg"},
-				{"archivo":"berlinelmuro2_11_20071104_1632611965.jpg"},
-				{"archivo":"berlinestadioolimpico_1_20071104_1959990984.jpg"},
-				{"archivo":"berlinmujersocialista_2_20071104_1325146137.jpg"}
+            "place":"Berlin",
+            "pictures":[
+				{"file":"berlinaeropuerto_9_20071104_2032201317.jpg"},
+				{"file":"berlinelmuro_10_20071104_1296184335.jpg"},
+				{"file":"berlinelmuro2_11_20071104_1632611965.jpg"},
+				{"file":"berlinestadioolimpico_1_20071104_1959990984.jpg"},
+				{"file":"berlinmujersocialista_2_20071104_1325146137.jpg"}
             ]
          },
          {
             "longitud":"11.08",
             "latitud":"49.45",
-            "lugar":"Nuremberg",
-            "fotos":[
-				{"archivo":"cuadri_nurembergimg_9812_3_20071125_2060191535.jpg"},
-				{"archivo":"cuadri_nurembergimg_9815_4_20071125_1392356712.jpg"},
-				{"archivo":"cuadri_nurembergimg_9817_5_20071125_1056511899.jpg"}
+            "place":"Nuremberg",
+            "pictures":[
+				{"file":"cuadri_nurembergimg_9812_3_20071125_2060191535.jpg"},
+				{"file":"cuadri_nurembergimg_9815_4_20071125_1392356712.jpg"},
+				{"file":"cuadri_nurembergimg_9817_5_20071125_1056511899.jpg"}
             ]
          }
       ]
@@ -357,19 +357,19 @@ var fotos = [
    {
       "longitud":"5.75",
       "latitud":"52.5",
-      "pais":"Holanda",
-      "lugares":[
+      "country":"Holanda",
+      "places":[
          {
             "longitud":"4.891",
             "latitud":"52.373",
-            "lugar":"Amsterdam",
-            "fotos":[
-				{"archivo":"amsterdamschiphol1_3_20071104_1690833919.jpg"},
-				{"archivo":"amsterdamschiphol2_4_20071104_1000953228.jpg"},
-				{"archivo":"amsterdamschiphol3_5_20071104_1308842778.jpg"},
-				{"archivo":"amsterdam_1213_22_20080909_1936717683.jpg"},
-				{"archivo":"amsterdam_0148_21_20080909_1001227968.jpg"},
-				{"archivo":"amsterdam_0147_20_20080909_2090261452.jpg"}
+            "place":"Amsterdam",
+            "pictures":[
+				{"file":"amsterdamschiphol1_3_20071104_1690833919.jpg"},
+				{"file":"amsterdamschiphol2_4_20071104_1000953228.jpg"},
+				{"file":"amsterdamschiphol3_5_20071104_1308842778.jpg"},
+				{"file":"amsterdam_1213_22_20080909_1936717683.jpg"},
+				{"file":"amsterdam_0148_21_20080909_1001227968.jpg"},
+				{"file":"amsterdam_0147_20_20080909_2090261452.jpg"}
             ]
          }
       ]
@@ -377,30 +377,30 @@ var fotos = [
    {
       "longitud":"13.3333",
       "latitud":"47.3333",
-      "pais":"Austria",
-      "lugares":[
+      "country":"Austria",
+      "places":[
          {
             "longitud":"13.035",
             "latitud":"47.805",
-            "lugar":"Salzburgo",
-            "fotos":[
-				{"archivo":"austriasalzburgo_7_20071104_1172106621.jpg"}
+            "place":"Salzburgo",
+            "pictures":[
+				{"file":"austriasalzburgo_7_20071104_1172106621.jpg"}
             ]
          },
          {
             "longitud":"16.36",
             "latitud":"48.199",
-            "lugar":"Viena",
-            "fotos":[
-				{"archivo":"austriaviena_8_20071104_1617903425.jpg"}
+            "place":"Viena",
+            "pictures":[
+				{"file":"austriaviena_8_20071104_1617903425.jpg"}
             ]
          },
          {
             "longitud":"12.177",
             "latitud":"47.22",
-            "lugar":"Cataratas de Krihmler",
-            "fotos":[
-				{"archivo":"austriakrihmler_6_20071104_1252161150.jpg"}
+            "place":"Cataratas de Krihmler",
+            "pictures":[
+				{"file":"austriakrihmler_6_20071104_1252161150.jpg"}
             ]
          }
       ]
@@ -408,14 +408,14 @@ var fotos = [
    {
       "longitud":"10",
       "latitud":"56",
-      "pais":"Dinamarca",
-      "lugares":[
+      "country":"Dinamarca",
+      "places":[
          {
             "longitud":"12.568",
             "latitud":"55.676",
-            "lugar":"Copenhage",
-            "fotos":[
-				{"archivo":"dinamarcacopenhage_3_20071104_1338510223.jpg"}
+            "place":"Copenhage",
+            "pictures":[
+				{"file":"dinamarcacopenhage_3_20071104_1338510223.jpg"}
             ]
          }
       ]
@@ -423,53 +423,53 @@ var fotos = [
    {
       "longitud":"12.8333",
       "latitud":"42.8333",
-      "pais":"Italia",
-      "lugares":[
+      "country":"Italia",
+      "places":[
          {
             "longitud":"12.453",
             "latitud":"41.902",
-            "lugar":"Roma",
-            "fotos":[
-				{"archivo":"elvaticano_4_20071104_1921392348.jpg"},
-				{"archivo":"roma1_4_20071104_1461210137.jpg"},
-				{"archivo":"roma2_5_20071104_1812794458.jpg"},
-				{"archivo":"roma3_6_20071104_1012621451.jpg"},
-				{"archivo":"roma4_7_20071104_1013974251.jpg"},
-				{"archivo":"roma-coliseo_2_20091003_2024799579.jpg"},
-				{"archivo":"betisvaticano_10_20090119_1045551252.jpg"}
+            "place":"Roma",
+            "pictures":[
+				{"file":"elvaticano_4_20071104_1921392348.jpg"},
+				{"file":"roma1_4_20071104_1461210137.jpg"},
+				{"file":"roma2_5_20071104_1812794458.jpg"},
+				{"file":"roma3_6_20071104_1012621451.jpg"},
+				{"file":"roma4_7_20071104_1013974251.jpg"},
+				{"file":"roma-coliseo_2_20091003_2024799579.jpg"},
+				{"file":"betisvaticano_10_20090119_1045551252.jpg"}
             ]
          },
          {
             "longitud":"11.712",
             "latitud":"44.357",
-            "lugar":"Imola",
-            "fotos":[
-				{"archivo":"italiaimola1_10_20071104_1814549593.jpg"},
-				{"archivo":"italiaimola2_11_20071104_1702853804.jpg"}
+            "place":"Imola",
+            "pictures":[
+				{"file":"italiaimola1_10_20071104_1814549593.jpg"},
+				{"file":"italiaimola2_11_20071104_1702853804.jpg"}
             ]
          },
          {
             "longitud":"12.338",
             "latitud":"45.434",
-            "lugar":"Venecia",
-            "fotos":[
-				{"archivo":"italiavenecia_12_20071104_1351111671.jpg"}
+            "place":"Venecia",
+            "pictures":[
+				{"file":"italiavenecia_12_20071104_1351111671.jpg"}
             ]
          },
          {
             "longitud":"11.26",
             "latitud":"43.77",
-            "lugar":"Florencia",
-            "fotos":[
-				{"archivo":"florencia_3_20091003_1935635483.jpg"}
+            "place":"Florencia",
+            "pictures":[
+				{"file":"florencia_3_20091003_1935635483.jpg"}
             ]
          },
          {
             "longitud":"10.39",
             "latitud":"43.72",
-            "lugar":"Pisa",
-            "fotos":[
-				{"archivo":"pisa_5_20091003_1007273025.jpg"}
+            "place":"Pisa",
+            "pictures":[
+				{"file":"pisa_5_20091003_1007273025.jpg"}
             ]
          }
       ]
@@ -477,28 +477,28 @@ var fotos = [
    {
       "longitud":"2",
       "latitud":"46",
-      "pais":"Francia",
-      "lugares":[
+      "country":"Francia",
+      "places":[
          {
             "longitud":"2.351",
             "latitud":"48.856",
-            "lugar":"Paris",
-            "fotos":[
-				{"archivo":"parisIMG_0144.jpg","fecha":"28-10-2013"},
-				{"archivo":"parisIMG_0145.jpg","fecha":"28-10-2013"},
-				{"archivo":"eurodisney1_1_20071104_1653387505.jpg"},
-				{"archivo":"eurodisney2_2_20071104_1519805142.jpg"},
-				{"archivo":"eurodisney3_3_20071104_1391316859.jpg"},
-				{"archivo":"eurodisney4_4_20071104_1251975084.jpg"},
-				{"archivo":"eurodisney5_5_20071104_1110609663.jpg"},
-				{"archivo":"eurodisney6_6_20071104_1746255983.jpg"},
-				{"archivo":"eurodisney7_7_20071104_1925732288.jpg"},
-				{"archivo":"eurodisney8_8_20071104_1625120627.jpg"},
-				{"archivo":"eurodisney9_9_20071104_1358253393.jpg"},
-				{"archivo":"paris1_5_20071104_1932977686.jpg"},
-				{"archivo":"paris2_6_20071104_1496950769.jpg"},
-				{"archivo":"paris3_7_20071104_1515505683.jpg"},
-				{"archivo":"paris4_8_20071104_1516408037.jpg"}
+            "place":"Paris",
+            "pictures":[
+				{"file":"parisIMG_0144.jpg","date":"28-10-2013"},
+				{"file":"parisIMG_0145.jpg","date":"28-10-2013"},
+				{"file":"eurodisney1_1_20071104_1653387505.jpg"},
+				{"file":"eurodisney2_2_20071104_1519805142.jpg"},
+				{"file":"eurodisney3_3_20071104_1391316859.jpg"},
+				{"file":"eurodisney4_4_20071104_1251975084.jpg"},
+				{"file":"eurodisney5_5_20071104_1110609663.jpg"},
+				{"file":"eurodisney6_6_20071104_1746255983.jpg"},
+				{"file":"eurodisney7_7_20071104_1925732288.jpg"},
+				{"file":"eurodisney8_8_20071104_1625120627.jpg"},
+				{"file":"eurodisney9_9_20071104_1358253393.jpg"},
+				{"file":"paris1_5_20071104_1932977686.jpg"},
+				{"file":"paris2_6_20071104_1496950769.jpg"},
+				{"file":"paris3_7_20071104_1515505683.jpg"},
+				{"file":"paris4_8_20071104_1516408037.jpg"}
             ]
          }
       ]
@@ -506,19 +506,19 @@ var fotos = [
    {
       "longitud":"22",
       "latitud":"39",
-      "pais":"Grecia",
-      "lugares":[
+      "country":"Grecia",
+      "places":[
          {
             "longitud":"23.719",
             "latitud":"37.973",
-            "lugar":"Atenas",
-            "fotos":[
-				{"archivo":"grecia1_5_20071104_1001564277.jpg"},
-				{"archivo":"greciaatenas1_6_20071104_2091338781.jpg"},
-				{"archivo":"greciadelfos_7_20071104_1531097833.jpg"},
-				{"archivo":"greciamicenas_8_20071104_1867211461.jpg"},
-				{"archivo":"greciaolimpia_9_20071104_1647107246.jpg"},
-				{"archivo":"greciateatroepidauro_10_20071104_1837975449.jpg"}
+            "place":"Atenas",
+            "pictures":[
+				{"file":"grecia1_5_20071104_1001564277.jpg"},
+				{"file":"greciaatenas1_6_20071104_2091338781.jpg"},
+				{"file":"greciadelfos_7_20071104_1531097833.jpg"},
+				{"file":"greciamicenas_8_20071104_1867211461.jpg"},
+				{"file":"greciaolimpia_9_20071104_1647107246.jpg"},
+				{"file":"greciateatroepidauro_10_20071104_1837975449.jpg"}
             ]
          }
       ]
@@ -526,16 +526,16 @@ var fotos = [
    {
       "longitud":"20",
       "latitud":"47",
-      "pais":"Hungria",
-      "lugares":[
+      "country":"Hungria",
+      "places":[
          {
             "longitud":"19.04",
             "latitud":"47.498",
-            "lugar":"Budapest",
-            "fotos":[
-				{"archivo":"hungriabudapest_1_20071104_1344098645.jpg"},
-				{"archivo":"hungriadanubiobudapest_2_20071104_1428649597.jpg"},
-				{"archivo":"hungriaparlamentobudapest_3_20071104_1346808213.jpg"}
+            "place":"Budapest",
+            "pictures":[
+				{"file":"hungriabudapest_1_20071104_1344098645.jpg"},
+				{"file":"hungriadanubiobudapest_2_20071104_1428649597.jpg"},
+				{"file":"hungriaparlamentobudapest_3_20071104_1346808213.jpg"}
             ]
          }
       ]
@@ -543,53 +543,53 @@ var fotos = [
    {
       "longitud":"-2",
       "latitud":"54",
-      "pais":"Inglaterra",
-      "lugares":[
+      "country":"Inglaterra",
+      "places":[
          {
             "longitud":"-0.126",
             "latitud":"51.499",
-            "lugar":"Londres",
-            "fotos":[
-				{"archivo":"londres1_1_20071104_1122718116.jpg"},
-				{"archivo":"londres2_2_20071104_1017888512.jpg"},
-				{"archivo":"100_1271_1_20080909_1502546236.jpg"},
-				{"archivo":"100_1306_2_20080909_1142632124.jpg"},
-				{"archivo":"londres-07_059_5_20080909_1826462720.jpg"},
-				{"archivo":"p9220080_6_20080909_1260716557.jpg"},
-				{"archivo":"p9220087_7_20080909_1478495479.jpg"},
-				{"archivo":"p9220088_8_20080909_1298217636.jpg"},
-				{"archivo":"p9220114_9_20080909_1989711744.jpg"},
-				{"archivo":"pb010051_10_20080909_1076982821.jpg"},
-				{"archivo":"pb020073_11_20080909_1267765660.jpg"},
-				{"archivo":"londres_4_20091003_1143585379.jpg"}
+            "place":"Londres",
+            "pictures":[
+				{"file":"londres1_1_20071104_1122718116.jpg"},
+				{"file":"londres2_2_20071104_1017888512.jpg"},
+				{"file":"100_1271_1_20080909_1502546236.jpg"},
+				{"file":"100_1306_2_20080909_1142632124.jpg"},
+				{"file":"londres-07_059_5_20080909_1826462720.jpg"},
+				{"file":"p9220080_6_20080909_1260716557.jpg"},
+				{"file":"p9220087_7_20080909_1478495479.jpg"},
+				{"file":"p9220088_8_20080909_1298217636.jpg"},
+				{"file":"p9220114_9_20080909_1989711744.jpg"},
+				{"file":"pb010051_10_20080909_1076982821.jpg"},
+				{"file":"pb020073_11_20080909_1267765660.jpg"},
+				{"file":"londres_4_20091003_1143585379.jpg"}
             ]
          },
          {
             "longitud":"-2.98",
             "latitud":"53.41",
-            "lugar":"Liverpool",
-            "fotos":[
-				{"archivo":"liverpool_11_20090119_1376957863.jpg"},
-				{"archivo":"4_1_20080915_1241418608.jpg"},
-				{"archivo":"6_2_20080915_1957017557.jpg"},
-				{"archivo":"bufandadelbetisenlosrecuerdos_29_20080915_2058474685.jpg"},
-				{"archivo":"johnnlennonbufandabetis_33_20080915_1134551348.jpg"},
-				{"archivo":"luky1_38_20080915_1394092834.jpg"},
-				{"archivo":"luky2_24_20080915_1934166533.jpg"},
-				{"archivo":"luky2-1_23_20080915_1037967672.jpg"},
-				{"archivo":"p35_edited_25_20080915_1640493798.jpg"},
-				{"archivo":"p4_39_20080915_1457071075.jpg"},
-				{"archivo":"police7_edited_26_20080915_2087714388.jpg"},
-				{"archivo":"rimg2346_27_20080915_1497205116.jpg"},
-				{"archivo":"rimg2369_28_20080915_2092073608.jpg"}
+            "place":"Liverpool",
+            "pictures":[
+				{"file":"liverpool_11_20090119_1376957863.jpg"},
+				{"file":"4_1_20080915_1241418608.jpg"},
+				{"file":"6_2_20080915_1957017557.jpg"},
+				{"file":"bufandadelbetisenlosrecuerdos_29_20080915_2058474685.jpg"},
+				{"file":"johnnlennonbufandabetis_33_20080915_1134551348.jpg"},
+				{"file":"luky1_38_20080915_1394092834.jpg"},
+				{"file":"luky2_24_20080915_1934166533.jpg"},
+				{"file":"luky2-1_23_20080915_1037967672.jpg"},
+				{"file":"p35_edited_25_20080915_1640493798.jpg"},
+				{"file":"p4_39_20080915_1457071075.jpg"},
+				{"file":"police7_edited_26_20080915_2087714388.jpg"},
+				{"file":"rimg2346_27_20080915_1497205116.jpg"},
+				{"file":"rimg2369_28_20080915_2092073608.jpg"}
             ]
          },
          {
             "longitud":"-1.31",
             "latitud":"51.06",
-            "lugar":"Winchester",
-            "fotos":[
-				{"archivo":"winchester_12_20090119_1559713434.jpg"}
+            "place":"Winchester",
+            "pictures":[
+				{"file":"winchester_12_20090119_1559713434.jpg"}
             ]
          }
       ]
@@ -597,15 +597,15 @@ var fotos = [
    {
       "longitud":"10",
       "latitud":"62",
-      "pais":"Noruega",
-      "lugares":[
+      "country":"Noruega",
+      "places":[
          {
             "longitud":"6.826",
             "latitud":"61.659",
-            "lugar":"Glaciar de Briksdal",
-            "fotos":[
-				{"archivo":"noruegaglacialbristal_3_20071104_1627620233.jpg"},
-				{"archivo":"noruegavalledelflan_4_20071104_1148082556.jpg"}
+            "place":"Glaciar de Briksdal",
+            "pictures":[
+				{"file":"noruegaglacialbristal_3_20071104_1627620233.jpg"},
+				{"file":"noruegavalledelflan_4_20071104_1148082556.jpg"}
             ]
          }
       ]
@@ -613,22 +613,22 @@ var fotos = [
    {
       "longitud":"20",
       "latitud":"52",
-      "pais":"Polonia",
-      "lugares":[
+      "country":"Polonia",
+      "places":[
          {
             "longitud":"21.011",
             "latitud":"52.244",
-            "lugar":"Varsovia",
-            "fotos":[
-				{"archivo":"poloniavarsovia_9_20071104_1593807818.jpg"}
+            "place":"Varsovia",
+            "pictures":[
+				{"file":"poloniavarsovia_9_20071104_1593807818.jpg"}
             ]
          },
          {
             "longitud":"19.35",
             "latitud":"50.07",
-            "lugar":"Auschwitz",
-            "fotos":[
-				{"archivo":"cimg2294_1_20090119_1196251919.jpg"}
+            "place":"Auschwitz",
+            "pictures":[
+				{"file":"cimg2294_1_20090119_1196251919.jpg"}
             ]
          }
       ]
@@ -636,30 +636,30 @@ var fotos = [
    {
       "longitud":"-8",
       "latitud":"39.5",
-      "pais":"Portugal",
-      "lugares":[
+      "country":"Portugal",
+      "places":[
          {
             "longitud":"-8.672",
             "latitud":"37.101",
-            "lugar":"Lagos",
-            "fotos":[
-				{"archivo":"portugallagos_10_20071104_2064123566.jpg"}
+            "place":"Lagos",
+            "pictures":[
+				{"file":"portugallagos_10_20071104_2064123566.jpg"}
             ]
          },
          {
             "longitud":"-25.45",
             "latitud":"37.77",
-            "lugar":"Isla de Sao Miguel",
-            "fotos":[
-				{"archivo":"dsc00519_2_20081213_1955942595.jpg"}
+            "place":"Isla de Sao Miguel",
+            "pictures":[
+				{"file":"dsc00519_2_20081213_1955942595.jpg"}
             ]
          },
          {
             "longitud":"-28.7",
             "latitud":"38.58",
-            "lugar":"Isla de Faial",
-            "fotos":[
-				{"archivo":"1_1_20081213_1311936917.jpg"}
+            "place":"Isla de Faial",
+            "pictures":[
+				{"file":"1_1_20081213_1311936917.jpg"}
             ]
          }
       ]
@@ -667,16 +667,16 @@ var fotos = [
    {
       "longitud":"15.5",
       "latitud":"49.75",
-      "pais":"Republica Checa",
-      "lugares":[
+      "country":"Republica Checa",
+      "places":[
          {
             "longitud":"14.420",
             "latitud":"50.087",
-            "lugar":"Praga",
-            "fotos":[
-				{"archivo":"republicachecapraga1_1_20071104_1888895661.jpg"},
-				{"archivo":"republicachecapraga2_2_20071104_1228586626.jpg"},
-				{"archivo":"republicachecapraga3_3_20071104_1174712555.jpg"}
+            "place":"Praga",
+            "pictures":[
+				{"file":"republicachecapraga1_1_20071104_1888895661.jpg"},
+				{"file":"republicachecapraga2_2_20071104_1228586626.jpg"},
+				{"file":"republicachecapraga3_3_20071104_1174712555.jpg"}
             ]
          }
       ]
@@ -684,115 +684,115 @@ var fotos = [
    {
       "longitud":"-4",
       "latitud":"40",
-      "pais":"España",
-      "lugares":[
+      "country":"España",
+      "places":[
          {
             "longitud":"-5.663",
             "latitud":"40.964",
-            "lugar":"Salamanca",
-            "fotos":[
-				{"archivo":"salamanca_8_20071104_1287631306.jpg"}
+            "place":"Salamanca",
+            "pictures":[
+				{"file":"salamanca_8_20071104_1287631306.jpg"}
             ]
          },
          {
             "longitud":"-8.542",
             "latitud":"42.88",
-            "lugar":"Santiago",
-            "fotos":[
-				{"archivo":"santiago1_9_20071104_1426579636.jpg"},
-				{"archivo":"catedral_en_santiago_3_20080909_1151394067.jpg"}
+            "place":"Santiago",
+            "pictures":[
+				{"file":"santiago1_9_20071104_1426579636.jpg"},
+				{"file":"catedral_en_santiago_3_20080909_1151394067.jpg"}
             ]
          },
          {
             "longitud":"-3.703",
             "latitud":"40.417",
-            "lugar":"Madrid",
-            "fotos":[
-				{"archivo":"calderon1_1_20071104_1000242176.jpg"},
-				{"archivo":"calderon2_2_20071104_1777690252.jpg"},
-				{"archivo":"imagen_030_4_20080909_1619376122.jpg"}
+            "place":"Madrid",
+            "pictures":[
+				{"file":"calderon1_1_20071104_1000242176.jpg"},
+				{"file":"calderon2_2_20071104_1777690252.jpg"},
+				{"file":"imagen_030_4_20080909_1619376122.jpg"}
             ]
          },
          {
             "longitud":"-16.641",
             "latitud":"28.268",
-            "lugar":"Tenerife",
-            "fotos":[
-				{"archivo":"teide_12_20071104_1312161332.jpg"}
+            "place":"Tenerife",
+            "pictures":[
+				{"file":"teide_12_20071104_1312161332.jpg"}
             ]
          },
          {
             "longitud":"-6.292",
             "latitud":"36.529",
-            "lugar":"Cadiz",
-            "fotos":[
-				{"archivo":"beticas_en_el_trofeo_carranza_10_20071125_1455003781.jpg"}
+            "place":"Cadiz",
+            "pictures":[
+				{"file":"beticas_en_el_trofeo_carranza_10_20071125_1455003781.jpg"}
             ]
          },
          {
             "longitud":"-1.643",
             "latitud":"42.817",
-            "lugar":"Pamplona",
-            "fotos":[
-				{"archivo":"pamplona-san-fermin_9_20071125_1315928450.jpg"},
-				{"archivo":"beticas_en_pamplona_11_20071125_1628144997.jpg"}
+            "place":"Pamplona",
+            "pictures":[
+				{"file":"pamplona-san-fermin_9_20071125_1315928450.jpg"},
+				{"file":"beticas_en_pamplona_11_20071125_1628144997.jpg"}
             ]
          },
          {
             "longitud":"-2.622",
             "latitud":"43.256",
-            "lugar":"Bilbao",
-            "fotos":[
-				{"archivo":"beticas_en_san_mames_12_20071125_1746737013.jpg"}
+            "place":"Bilbao",
+            "pictures":[
+				{"file":"beticas_en_san_mames_12_20071125_1746737013.jpg"}
             ]
          },
          {
             "longitud":"-1.984",
             "latitud":"43.320",
-            "lugar":"San Sebastian",
-            "fotos":[
-				{"archivo":"beticas_en_san_sebastian_13_20071125_1485392620.jpg"}
+            "place":"San Sebastian",
+            "pictures":[
+				{"file":"beticas_en_san_sebastian_13_20071125_1485392620.jpg"}
             ]
          },
          {
             "longitud":"-3.808",
             "latitud":"43.460",
-            "lugar":"Santander",
-            "fotos":[
-				{"archivo":"beticos_en_santander_14_20071125_2049767958.jpg"}
+            "place":"Santander",
+            "pictures":[
+				{"file":"beticos_en_santander_14_20071125_2049767958.jpg"}
             ]
          },
          {
             "longitud":"-5.35",
             "latitud":"36.14",
-            "lugar":"Gibraltar",
-            "fotos":[
-				{"archivo":"gibraltar_7_20071125_2037266723.jpg"}
+            "place":"Gibraltar",
+            "pictures":[
+				{"file":"gibraltar_7_20071125_2037266723.jpg"}
             ]
          },
          {
             "longitud":"-8.4",
             "latitud":"43.37",
-            "lugar":"La Coruña",
-            "fotos":[
-				{"archivo":"torre_de_hercules_en_a_corua_13_20080909_1993273593.jpg"}
+            "place":"La Coruña",
+            "pictures":[
+				{"file":"torre_de_hercules_en_a_corua_13_20080909_1993273593.jpg"}
             ]
          },
          {
             "longitud":"-8.71",
             "latitud":"42.23",
-            "lugar":"Vigo",
-            "fotos":[
-				{"archivo":"praia_de_samil_en_vigo_12_20080909_1616650059.jpg"}
+            "place":"Vigo",
+            "pictures":[
+				{"file":"praia_de_samil_en_vigo_12_20080909_1616650059.jpg"}
             ]
          },
          {
             "longitud":"-5.98",
             "latitud":"37.36",
-            "lugar":"Sevilla",
-            "fotos":[
-				{"archivo":"yo_campo_del_betis_1_20081207_1329516078.jpg"},
-				{"archivo":"roni_verde_estadio_6_20091003_2075564595.jpg"}
+            "place":"Sevilla",
+            "pictures":[
+				{"file":"yo_campo_del_betis_1_20081207_1329516078.jpg"},
+				{"file":"roni_verde_estadio_6_20091003_2075564595.jpg"}
             ]
          }
       ]
@@ -800,15 +800,15 @@ var fotos = [
    {
       "longitud":"15",
       "latitud":"62",
-      "pais":"Suecia",
-      "lugares":[
+      "country":"Suecia",
+      "places":[
          {
             "longitud":"11.97",
             "latitud":"57.70",
-            "lugar":"Goteborg",
-            "fotos":[
-				{"archivo":"suecia1_10_20071104_1122130882.jpg"},
-				{"archivo":"suecia2_11_20071104_1236746770.jpg"}
+            "place":"Goteborg",
+            "pictures":[
+				{"file":"suecia1_10_20071104_1122130882.jpg"},
+				{"file":"suecia2_11_20071104_1236746770.jpg"}
             ]
          }
       ]
@@ -816,19 +816,19 @@ var fotos = [
    {
       "longitud":"-8",
       "latitud":"53",
-      "pais":"Irlanda",
-      "lugares":[
+      "country":"Irlanda",
+      "places":[
          {
             "longitud":"-6.267",
             "latitud":"53.343",
-            "lugar":"Dublin",
-            "fotos":[
-				{"archivo":"irlandadublin1_4_20071104_1694965586.jpg"},
-				{"archivo":"irlandadublin2_5_20071104_1128964874.jpg"},
-				{"archivo":"irlandadublin3_6_20071104_1163509844.jpg"},
-				{"archivo":"irlandadublin4_7_20071104_1761998821.jpg"},
-				{"archivo":"irlandadublin5_8_20071104_1956794358.jpg"},
-				{"archivo":"irlandadublinguinness_9_20071104_1877544561.jpg"}
+            "place":"Dublin",
+            "pictures":[
+				{"file":"irlandadublin1_4_20071104_1694965586.jpg"},
+				{"file":"irlandadublin2_5_20071104_1128964874.jpg"},
+				{"file":"irlandadublin3_6_20071104_1163509844.jpg"},
+				{"file":"irlandadublin4_7_20071104_1761998821.jpg"},
+				{"file":"irlandadublin5_8_20071104_1956794358.jpg"},
+				{"file":"irlandadublinguinness_9_20071104_1877544561.jpg"}
             ]
          }
       ]
@@ -836,14 +836,14 @@ var fotos = [
    {
       "longitud":"3",
       "latitud":"28",
-      "pais":"Argelia",
-      "lugares":[
+      "country":"Argelia",
+      "places":[
          {
             "longitud":"-7.869",
             "latitud":"27.615",
-            "lugar":"Ausserd",
-            "fotos":[
-				{"archivo":"ausserd-argelia_1_20071125_1803264472.jpg"}
+            "place":"Ausserd",
+            "pictures":[
+				{"file":"ausserd-argelia_1_20071125_1803264472.jpg"}
             ]
          }
       ]
@@ -851,16 +851,16 @@ var fotos = [
    {
       "longitud":"-55",
       "latitud":"-10",
-      "lugar":"Rio de Janeiro",
-      "pais":"Brasil",
-      "lugares":[
+      "place":"Rio de Janeiro",
+      "country":"Brasil",
+      "places":[
          {
             "longitud":"-43.213",
             "latitud":"-22.964",
-            "lugar":"Rio de Janeiro",
-            "fotos":[
-				{"archivo":"maracana-brasil_3_20071125_1930472611.jpg"},
-				{"archivo":"rio-de-janeiro_5_20071125_1035177354.jpg"}
+            "place":"Rio de Janeiro",
+            "pictures":[
+				{"file":"maracana-brasil_3_20071125_1930472611.jpg"},
+				{"file":"rio-de-janeiro_5_20071125_1035177354.jpg"}
             ]
          }
       ]
@@ -868,14 +868,14 @@ var fotos = [
    {
       "longitud":"105",
       "latitud":"35",
-      "pais":"China",
-      "lugares":[
+      "country":"China",
+      "places":[
          {
             "longitud":"116.38",
             "latitud":"39.923",
-            "lugar":"Pekin",
-            "fotos":[
-				{"archivo":"pekin-china_1_20071125_1536590492.jpg"}
+            "place":"Pekin",
+            "pictures":[
+				{"file":"pekin-china_1_20071125_1536590492.jpg"}
             ]
          }
       ]
@@ -883,22 +883,22 @@ var fotos = [
    {
       "longitud":"4",
       "latitud":"50.8333",
-      "pais":"Belgica",
-      "lugares":[
+      "country":"Belgica",
+      "places":[
          {
             "longitud":"4.307",
             "latitud":"50.836",
-            "lugar":"Bruselas",
-            "fotos":[
-				{"archivo":"anderlecht-bruselas-belgica_1_20071125_1758958037.jpg"}
+            "place":"Bruselas",
+            "pictures":[
+				{"file":"anderlecht-bruselas-belgica_1_20071125_1758958037.jpg"}
             ]
          },
          {
             "longitud":"3.224",
             "latitud":"51.209",
-            "lugar":"Brujas",
-            "fotos":[
-				{"archivo":"brujas-belgica_2_20071125_1837308379.jpg"}
+            "place":"Brujas",
+            "pictures":[
+				{"file":"brujas-belgica_2_20071125_1837308379.jpg"}
             ]
          }
       ]
@@ -906,14 +906,14 @@ var fotos = [
    {
       "longitud":"35",
       "latitud":"39",
-      "pais":"Turquia",
-      "lugares":[
+      "country":"Turquia",
+      "places":[
          {
             "longitud":"29.01",
             "latitud":"41.06",
-            "lugar":"Estambul",
-            "fotos":[
-				{"archivo":"fenerbache-turquia_6_20071125_1665646237.jpg"}
+            "place":"Estambul",
+            "pictures":[
+				{"file":"fenerbache-turquia_6_20071125_1665646237.jpg"}
             ]
          }
       ]
@@ -921,36 +921,36 @@ var fotos = [
    {
       "longitud":"-2",
       "latitud":"56",
-      "pais":"Escocia",
-      "lugares":[
+      "country":"Escocia",
+      "places":[
          {
             "longitud":"-3.58",
             "latitud":"56.41",
-            "lugar":"Methven",
-            "fotos":[
-				{"archivo":"methven-escocia_8_20071125_1940745182.jpg"}
+            "place":"Methven",
+            "pictures":[
+				{"file":"methven-escocia_8_20071125_1940745182.jpg"}
             ]
          },
          {
             "longitud":"-3.19",
             "latitud":"55.95",
-            "lugar":"Edimburgo",
-            "fotos":[
-				{"archivo":"edimburgoIMGP5344.jpg","fecha":"28-10-2013"},
-				{"archivo":"edimburgoP1030380.jpg","fecha":"28-10-2013"},
-				{"archivo":"edimburgoP1030390.jpg","fecha":"28-10-2013"},
-				{"archivo":"edimburgoP1030400.jpg","fecha":"28-10-2013"},
-				{"archivo":"edimburgo001_23_20080909_1096676746.jpg"},
-				{"archivo":"edimburgo002_24_20080909_1689038849.jpg"}
+            "place":"Edimburgo",
+            "pictures":[
+				{"file":"edimburgoIMGP5344.jpg","date":"28-10-2013"},
+				{"file":"edimburgoP1030380.jpg","date":"28-10-2013"},
+				{"file":"edimburgoP1030390.jpg","date":"28-10-2013"},
+				{"file":"edimburgoP1030400.jpg","date":"28-10-2013"},
+				{"file":"edimburgo001_23_20080909_1096676746.jpg"},
+				{"file":"edimburgo002_24_20080909_1689038849.jpg"}
             ]
          },
          {
             "longitud":"-4.25",
             "latitud":"55.86",
-            "lugar":"Glasgow",
-			"fecha":"28-10-2013",
-            "fotos":[
-				{"archivo":"glasgowIMAG0191.jpg","fecha":"28-10-2013"}
+            "place":"Glasgow",
+	    "date":"28-10-2013",
+            "pictures":[
+				{"file":"glasgowIMAG0191.jpg","date":"28-10-2013"}
             ]
          }
       ]
@@ -958,14 +958,14 @@ var fotos = [
    {
       "longitud":"133",
       "latitud":"-27",
-      "pais":"Australia",
-      "lugares":[
+      "country":"Australia",
+      "places":[
          {
             "longitud":"151.22",
             "latitud":"-33.86",
-            "lugar":"Sydney",
-            "fotos":[
-				{"archivo":"operahouse-sydney_1_20071125_1237226618.jpg"}
+            "place":"Sydney",
+            "pictures":[
+				{"file":"operahouse-sydney_1_20071125_1237226618.jpg"}
             ]
          }
       ]
@@ -973,14 +973,14 @@ var fotos = [
    {
       "longitud":"0",
       "latitud":"-75",
-      "pais":"Antartida",
-      "lugares":[
+      "country":"Antartida",
+      "places":[
          {
             "longitud":"0.0",
             "latitud":"-75.18",
-            "lugar":"En algun lugar",
-            "fotos":[
-				{"archivo":"antartida-meteo_1_20071125_1883617670.jpg"}
+            "place":"En algun place",
+            "pictures":[
+				{"file":"antartida-meteo_1_20071125_1883617670.jpg"}
             ]
          }
       ]
@@ -988,19 +988,19 @@ var fotos = [
    {
       "longitud":"9.5333",
       "latitud":"47.1667",
-      "pais":"Liechtenstein",
-      "lugares":[
+      "country":"Liechtenstein",
+      "places":[
          {
             "longitud":"9.52",
             "latitud":"47.14",
-            "lugar":"Vaduz",
-            "fotos":[
-				{"archivo":"vaduz_0607_003_14_20080909_1909696874.jpg"},
-				{"archivo":"vaduz_0607_008_15_20080909_2017375859.jpg"},
-				{"archivo":"vaduz_0607_011_16_20080909_1304629457.jpg"},
-				{"archivo":"vaduz_0607_012_17_20080909_1807662452.jpg"},
-				{"archivo":"vaduz_0607_024_18_20080909_1998916877.jpg"},
-				{"archivo":"vaduz_0607_028_19_20080909_1752091009.jpg"}
+            "place":"Vaduz",
+            "pictures":[
+				{"file":"vaduz_0607_003_14_20080909_1909696874.jpg"},
+				{"file":"vaduz_0607_008_15_20080909_2017375859.jpg"},
+				{"file":"vaduz_0607_011_16_20080909_1304629457.jpg"},
+				{"file":"vaduz_0607_012_17_20080909_1807662452.jpg"},
+				{"file":"vaduz_0607_024_18_20080909_1998916877.jpg"},
+				{"file":"vaduz_0607_028_19_20080909_1752091009.jpg"}
             ]
          }
       ]
@@ -1008,29 +1008,29 @@ var fotos = [
    {
       "longitud":"18",
       "latitud":"44",
-      "lugar":"Sarajevo",
-      "pais":"Bosnia",
-      "lugares":[
+      "place":"Sarajevo",
+      "country":"Bosnia",
+      "places":[
          {
             "longitud":"18.43",
             "latitud":"43.86",
-            "lugar":"Sarajevo",
-            "fotos":[
-				{"archivo":"dsc01702_2_20090119_1999694651.jpg"},
-				{"archivo":"dsc01727_3_20090119_1968299517.jpg"},
-				{"archivo":"dsc01728_4_20090119_1442053193.jpg"},
-				{"archivo":"dsc01763_6_20090119_1394688585.jpg"},
-				{"archivo":"dsc01757_5_20090119_1536313625.jpg"},
-				{"archivo":"dsc01774_7_20090119_1241362306.jpg"},
-				{"archivo":"dsc01780_8_20090119_1909225011.jpg"}
+            "place":"Sarajevo",
+            "pictures":[
+				{"file":"dsc01702_2_20090119_1999694651.jpg"},
+				{"file":"dsc01727_3_20090119_1968299517.jpg"},
+				{"file":"dsc01728_4_20090119_1442053193.jpg"},
+				{"file":"dsc01763_6_20090119_1394688585.jpg"},
+				{"file":"dsc01757_5_20090119_1536313625.jpg"},
+				{"file":"dsc01774_7_20090119_1241362306.jpg"},
+				{"file":"dsc01780_8_20090119_1909225011.jpg"}
             ]
          },
          {
             "longitud":"17.81",
             "latitud":"43.34",
-            "lugar":"Mostar",
-            "fotos":[
-				{"archivo":"dsc01804_9_20090119_1153590264.jpg"}
+            "place":"Mostar",
+            "pictures":[
+				{"file":"dsc01804_9_20090119_1153590264.jpg"}
             ]
          }
       ]
@@ -1038,14 +1038,14 @@ var fotos = [
    {
       "longitud":"7.41",
       "latitud":"43.75",
-      "pais":"Monaco",
-      "lugares":[
+      "country":"Monaco",
+      "places":[
          {
             "longitud":"7.41",
             "latitud":"43.75",
-            "lugar":"Monaco",
-            "fotos":[
-				{"archivo":"monaco_1_20091003_2014721851.jpg"}
+            "place":"Monaco",
+            "pictures":[
+				{"file":"monaco_1_20091003_2014721851.jpg"}
             ]
          }
       ]
@@ -1053,14 +1053,14 @@ var fotos = [
    {
       "longitud":"-65",
       "latitud":"-17",
-      "pais":"Bolivia",
-      "lugares":[
+      "country":"Bolivia",
+      "places":[
          {
             "longitud":"-60.73",
             "latitud":"-17.84",
-            "lugar":"San Jose de Chiquitos",
-            "fotos":[
-				{"archivo":"bolivia-sanjosedechiquitos_4_20091003_1556317879.jpg"}
+            "place":"San Jose de Chiquitos",
+            "pictures":[
+				{"file":"bolivia-sanjosedechiquitos_4_20091003_1556317879.jpg"}
             ]
          }
       ]

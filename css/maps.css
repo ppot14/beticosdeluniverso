@@ -12,7 +12,9 @@ body {
     margin-bottom: 10px;
 }
 .navbar .navbar-brand{	
-    font-size: 22px;
+    color: #4CAE4C;
+    font-size: 30px;
+    padding: 14px;
 }
 	
 .navbar .navbar-brand	img {
@@ -53,11 +55,11 @@ div#map_canvas{
 }
 
 /*---- MAP ----*/
-div#verfotos{
+div#picture-div{
 	width: 240px;
 }
 
-div#enlace-foto {
+div#picture-background {
     background-position:center;
     display: table;
     height: 180px;
@@ -68,12 +70,8 @@ div#enlace-foto {
     -moz-border-radius: 4px;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px rgba(0, 0, 0, 0.075);
 }
-div#cabecerafoto {
-/*    display: table-cell;
-    vertical-align: bottom;*/
-}
 
-div#linkFrame {
+div#link-frame {
     /*border-top: 7px solid;*/
     display: table;
     height: 139px;
@@ -85,13 +83,18 @@ div#linkFrame {
     -moz-border-radius: 4px;
 }
 
-div#linkFrame:hover {
+div#link-frame:hover {
     border: 3px solid #4CAE4C;
     color: white;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
 }
 
-div#cabecerafoto .pager{
+div#picture-navigator {
+/*    display: table-cell;
+    vertical-align: bottom;*/
+}
+
+div#picture-navigator .pager{
     margin: 5px;
 }
 

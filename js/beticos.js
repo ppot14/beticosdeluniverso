@@ -1,91 +1,93 @@
 /*
  * Variables
  */
-var ruta = "";
+var path = "";
 
-var rutaminiaturas = "./imagenes/medianas/";
+var miniPicturePath = "./pictures/middle/";
 
-var rutaoriginales = "./imagenes/originales/";
+var originalPicturePath = "./pictures/original/";
 
 var j = 0;
 
-var infowindow;
+var infoWindow;
 
-var listaParaBusqueda = new Array();
+var searchingList = new Array();
 
-var lugares = new Array();
+var places = new Array();
 
-var marcas = new Array();
+var markers = new Array();
 
-var indiceFotoLugar = new Array();
+var pictureIndexByPlaces = new Array();
 
-var totalLugares = 0;
+var currentPlace;
 
-var totalFotos = 0;
+var placesTotalNumber = 0;
 
-var mapaOpciones;
+var picturesTotalNumber = 0;
 
-var mapa;
+var mapOptions;
 
-function anterior(lugar) {
+var map;
 
-    indiceFotoLugar[lugar.lugar] = indiceFotoLugar[lugar.lugar] - 1;
+function previous() {
 
-    renderPicture(lugar);
+    pictureIndexByPlaces[currentPlace.place] = pictureIndexByPlaces[currentPlace.place] - 1;
 
-}
-
-function siguiente(lugar) {
-
-    indiceFotoLugar[lugar.lugar] = indiceFotoLugar[lugar.lugar] + 1;
-
-    renderPicture(lugar);
+    renderPicture();
 
 }
 
-function configurarPaginacionFotos(lugar) {
+function next() {
 
-    if (lugar.fotos.length === 1) {
+    pictureIndexByPlaces[currentPlace.place] = pictureIndexByPlaces[currentPlace.place] + 1;
+
+    renderPicture();
+
+}
+
+function setupPicturePagination() {
+
+    if (currentPlace.pictures.length === 1) {
 
         $("#siguiente").addClass("disabled");
 
         $("#anterior").addClass("disabled");
 
-        $('#enlace-anterior').unbind('click');
+        $('#link-previous').unbind('click');
         
-        $('#enlace-siguiente').unbind('click');
+        $('#link-next').unbind('click');
 
     } else {
 
-        if (indiceFotoLugar[lugar.lugar] === lugar.fotos.length - 1) {
+        if (pictureIndexByPlaces[currentPlace.place] === currentPlace.pictures.length - 1) {
 
             $("#siguiente").addClass("disabled");
 
             $("#anterior").removeClass("disabled");
 
-            $('#enlace-anterior').unbind('click');
+            $('#link-previous').unbind('click');
             
-            $('#enlace-siguiente').unbind('click');
+            $('#link-next').unbind('click');
 
-            $("#enlace-anterior").click(function() {
+            $("#link-previous").click(function() {
                 
-                anterior(lugar);
+                previous();
                 
             });
 
-        } else if (indiceFotoLugar[lugar.lugar] === 0) {
+        } else if (pictureIndexByPlaces[currentPlace.place] === 0) {
 
             $("#anterior").addClass("disabled");
 
             $("#siguiente").removeClass("disabled");
 
-            $('#enlace-anterior').unbind('click');
+            $('#link-previous').unbind('click');
             
-            $('#enlace-siguiente').unbind('click');
+            $('#link-next').unbind('click');
 
-            $("#enlace-siguiente").click(function() {
+            $("#link-next").click(function() {
                 
-                siguiente(lugar);
+                next();
                 
             });
 
@@ -95,19 +97,19 @@ function configurarPaginacionFotos(lugar) {
 
             $("#anterior").removeClass("disabled");
 
-            $('#enlace-anterior').unbind('click');
+            $('#link-previous').unbind('click');
             
-            $('#enlace-siguiente').unbind('click');
+            $('#link-next').unbind('click');
 
-            $("#enlace-anterior").click(function() {
+            $("#link-previous").click(function() {
                 
-                anterior(lugar);
+                previous();
                 
             });
 
-            $("#enlace-siguiente").click(function() {
+            $("#link-next").click(function() {
                 
-                siguiente(lugar);
+                next();
                 
             });
 
@@ -117,129 +119,123 @@ function configurarPaginacionFotos(lugar) {
 
 }
 
-function renderPicture(lugar) {
+function renderPicture() {
 
-    $('#indice-foto').text(indiceFotoLugar[lugar.lugar] + 1);
+    $('#picture-index').text(pictureIndexByPlaces[currentPlace.place] + 1);
 
-//    $("#foto-bocadillo").attr("src",ruta + rutaminiaturas + lugar.fotos[indiceFotoLugar[lugar.lugar]]);
+    $("#picture-background").css("background-image",'url('+path + originalPicturePath + currentPlace.pictures[pictureIndexByPlaces[currentPlace.place]].file+')');
 
-//    $("#enlace-foto").attr("href",ruta + rutaoriginales + lugar.fotos[indiceFotoLugar[lugar.lugar]]);
-
-    $("#enlace-foto").css("background-image",'url('+ruta + rutaoriginales + lugar.fotos[indiceFotoLugar[lugar.lugar]].archivo+')');
-
-//    var fechaFoto =  lugar.fotos[indiceFotoLugar[lugar.lugar]].fecha;
-//
-//    var titulo = lugar.lugar;
-//
-//    if(fechaFoto){
-//
-//            titulo = titulo + ". Agregada el " + fechaFoto;
-//
-//    }
-//
-//    $("#enlace-foto").attr("title", titulo);
-
-    configurarPaginacionFotos(lugar);
+    setupPicturePagination();
 
 }
 
-function openLightbox(){
+function getPictureTitle(index){
     
-    console.debug('enlace-foto.css '+$("#enlace-foto").css("background-image"));
+    var pictureDate =  currentPlace.pictures[index].date;
+
+    var title = currentPlace.place;
+
+    if(pictureDate){
+
+            title = title + ". Agregada el " + pictureDate;
+
+    }
+
+    return title;
     
 }
 
-function rellenarBocadillo(lugarTexto) {
+function initializeBalloon(placeName) {
 
     //InfoWindow initialization
-    var lugar = buscar(lugarTexto, true);
+    currentPlace = search(placeName, true);
 
-    indiceFotoLugar[lugar.lugar] = 0;
+    pictureIndexByPlaces[currentPlace.place] = 0;
 
-    $('#total-foto').text(lugar.fotos.length);
+    $('#picture-total').text(currentPlace.pictures.length);
 
-    $('#lugar').text(lugar.lugar);
+    $('#lugar').text(currentPlace.place);
 
-    var pais = buscarPaisPorLugar(lugar.lugar);
+    var country = searchCountryByPlace(currentPlace.place);
 
-    $('#enlace-pais').text(pais.pais);
+    $('#link-country').text(country.country);
 
     //Render first picture
-    renderPicture(lugar);
+    renderPicture();
 
-    $("#enlace-pais").click(function() {
+    $("#link-country").click(function() {
 
-        $("#verfotos").appendTo("#invisible");
+        $("#picture-div").appendTo("#invisible");
 
-        infowindow.close();
+        infoWindow.close();
 
-        irAPais(pais);
+        goToCountry(country);
 
     });
 
 }
 
-function listarBusqueda() {
+function listSearch() {
 
-    var numPaises = fotos.length;
+    var numCountries = picturesJson.length;
 
-    var numPaisesLugares = 0;
+    var numCountriesPlaces = 0;
 
-    var numLugares = 0;
+    var numPlaces = 0;
 
-    var numFotos = 0;
+    var numPitures = 0;
 
-    for (var i = 0; i < numPaises; i++) {
+    for (var i = 0; i < numCountries; i++) {
 
-        listaParaBusqueda[numPaisesLugares] = fotos[i].pais;
+        searchingList[numCountriesPlaces] = picturesJson[i].country;
 
-        numPaisesLugares++;
+        numCountriesPlaces++;
 
-        var numPaisesLugaresTemp = fotos[i].lugares.length;
+        var numCountriesPlacesTemp = picturesJson[i].places.length;
 
-        for (var j = 0; j < numPaisesLugaresTemp; j++) {
+        for (var j = 0; j < numCountriesPlacesTemp; j++) {
 
-            listaParaBusqueda[numPaisesLugares] = fotos[i].lugares[j].lugar;
+            searchingList[numCountriesPlaces] = picturesJson[i].places[j].place;
 
-            lugares[numLugares] = fotos[i].lugares[j];
+            places[numPlaces] = picturesJson[i].places[j];
 
-            numFotos = numFotos + fotos[i].lugares[j].fotos.length;
+            numPitures = numPitures + picturesJson[i].places[j].pictures.length;
 
-            numPaisesLugares++;
+            numCountriesPlaces++;
 
-            numLugares++;
+            numPlaces++;
 
         }
 
     }
 
-    listaParaBusqueda.sort();
+    searchingList.sort();
 
-    totalLugares = numLugares;
+    placesTotalNumber = numPlaces;
 
-    totalFotos = numFotos;
+    picturesTotalNumber = numPitures;
 
 }
 
-function buscar(texto, soloLugares) {
+function search(text, onlyPlaces) {
 
-    var numPaises = fotos.length;
+    var numCountries = picturesJson.length;
 
-    for (var i = 0; i < numPaises; i++) {
+    for (var i = 0; i < numCountries; i++) {
 
-        if (!soloLugares && fotos[i].pais.toUpperCase().trim() === texto.toUpperCase().trim()) {
+        if (!onlyPlaces && picturesJson[i].country.toUpperCase().trim() === text.toUpperCase().trim()) {
 
-            return fotos[i];
+            return picturesJson[i];
 
         }
 
-        var numPaisesLugaresTemp = fotos[i].lugares.length;
+        var numCountriesPlacesTemp = picturesJson[i].places.length;
 
-        for (var j = 0; j < numPaisesLugaresTemp; j++) {
+        for (var j = 0; j < numCountriesPlacesTemp; j++) {
 
-            if (fotos[i].lugares[j].lugar.toUpperCase().trim() === texto.toUpperCase().trim()) {
+            if (picturesJson[i].places[j].place.toUpperCase().trim() === text.toUpperCase().trim()) {
 
-                return fotos[i].lugares[j];
+                return picturesJson[i].places[j];
 
             }
 
@@ -251,19 +247,19 @@ function buscar(texto, soloLugares) {
 
 }
 
-function buscarPaisPorLugar(texto) {
+function searchCountryByPlace(text) {
 
-    var numPaises = fotos.length;
+    var numCountries = picturesJson.length;
 
-    for (var i = 0; i < numPaises; i++) {
+    for (var i = 0; i < numCountries; i++) {
 
-        var numPaisesLugaresTemp = fotos[i].lugares.length;
+        var numCountriesPlacesTemp = picturesJson[i].places.length;
 
-        for (var j = 0; j < numPaisesLugaresTemp; j++) {
+        for (var j = 0; j < numCountriesPlacesTemp; j++) {
 
-            if (fotos[i].lugares[j].lugar.toUpperCase().trim() === texto.toUpperCase().trim()) {
+            if (picturesJson[i].places[j].place.toUpperCase().trim() === text.toUpperCase().trim()) {
 
-                return fotos[i];
+                return picturesJson[i];
 
             }
 
@@ -273,35 +269,17 @@ function buscarPaisPorLugar(texto) {
 
 }
 
-function buscarMarca(texto) {
+function searchMarker(text) {
 
-    var numMarcas = marcas.length;
+    var numMarkers = markers.length;
 
-    for (var i = 0; i < numMarcas; i++) {
+    for (var i = 0; i < numMarkers; i++) {
 
-        marcas[i].lugar;
+        markers[i].place;
 
-        if (marcas[i].lugar.toUpperCase().trim() === texto.toUpperCase().trim()) {
+        if (markers[i].place.toUpperCase().trim() === text.toUpperCase().trim()) {
 
-            return marcas[i];
-
-        }
-
-    }
-
-    return null;
-
-}
-
-function buscarPaisPorNombre(texto) {
-
-    var numPaises = fotos.length;
-
-    for (var i = 0; i < numPaises; i++) {
-
-        if (fotos[i].pais.toUpperCase().trim() === texto.toUpperCase().trim()) {
-
-            return fotos[i];
+            return markers[i];
 
         }
 
@@ -311,117 +289,135 @@ function buscarPaisPorNombre(texto) {
 
 }
 
-function irAPais(pais) {
+function searchCountryByName(text) {
 
-    mapa.setCenter(new google.maps.LatLng(pais.latitud, pais.longitud));
+    var numCountries = picturesJson.length;
+
+    for (var i = 0; i < numCountries; i++) {
+
+        if (picturesJson[i].country.toUpperCase().trim() === text.toUpperCase().trim()) {
+
+            return picturesJson[i];
+
+        }
+
+    }
+
+    return null;
+
+}
+
+function goToCountry(country) {
+
+    map.setCenter(new google.maps.LatLng(country.latitud, country.longitud));
 
     var zoom = 5;
 
-    mapa.setZoom(zoom);
+    map.setZoom(zoom);
 
-    seleccionarLista(pais.pais);
+    selectList(country.country);
 
 }
 
-function unirBocadillo(marca) {
+function linkBalloon(marker) {
 
-    google.maps.event.addListener(marca, 'click', function() {
+    google.maps.event.addListener(marker, 'click', function() {
 
-        if (infowindow) {
+        if (infoWindow) {
 
-            $("#verfotos").appendTo("#invisible");
+            $("#picture-div").appendTo("#invisible");
 
-            infowindow.close();
+            infoWindow.close();
 
         }
 
-        rellenarBocadillo(marca.title);
+        initializeBalloon(marker.title);
 
-        seleccionarLista(marca.title);
+        selectList(marker.title);
 
-        mapa.setCenter(marca.getPosition());
+        map.setCenter(marker.getPosition());
 
-        mapa.setZoom(7);
+        map.setZoom(7);
 
-        infowindow = new google.maps.InfoWindow({
+        infoWindow = new google.maps.InfoWindow({
             
-            content: document.getElementById("verfotos")
+            content: document.getElementById("picture-div")
             
         });
 
-        infowindow.open(mapa, marca);
+        infoWindow.open(map, marker);
 
-        google.maps.event.addListener(infowindow, 'closeclick', function() {
+        google.maps.event.addListener(infoWindow, 'closeclick', function() {
 
-            $("#verfotos").appendTo("#invisible");
+            $("#picture-div").appendTo("#invisible");
 
         });
 
     });
 }
 
-function seleccionarLista(nombre) {
+function selectList(name) {
 
-    $("#lista-busqueda option").filter(function() {
+    $("#search-list option").filter(function() {
 
-        return $(this).text() === nombre;
+        return $(this).text() === name;
 
     }).attr('selected', true);
 
-    $("#lista-busqueda option").filter(function() {
+    $("#search-list option").filter(function() {
 
-        return $(this).text() !== nombre;
+        return $(this).text() !== name;
 
     }).attr('selected', false);
 }
 
-function inicializarMapa(mapa_canvas) {
+function initializeMap(mapCanvas) {
 
     try {
 
-        mapaOpciones = {
+        mapOptions = {
             center: new google.maps.LatLng(37.356511, -5.982002),
             zoom: 16,
             mapTypeId: google.maps.MapTypeId.ROADMAP //google.maps.MapTypeId.ROADMAP SATELLITE 
         };
 
-        mapa = new google.maps.Map(mapa_canvas, mapaOpciones);
+        map = new google.maps.Map(mapCanvas, mapOptions);
 
-        listarBusqueda();
+        listSearch();
 
-        $("#total-fotos").text(totalFotos);
+        $("#total-number-pictures").text(picturesTotalNumber);
         
-        $("#total-lugares").text(totalLugares);
+        $("#total-number-places").text(placesTotalNumber);
         
-        $("#total-paises").text(fotos.length);
+        $("#total-number-countries").text(picturesJson.length);
 
-        var $subType = $("#lista-busqueda");
+        var $subType = $("#search-list");
         
         $subType.empty();
         
-        $.each(listaParaBusqueda, function() {
+        $.each(searchingList, function() {
             
             $subType.append($('<option></option>').text(this));
             
         });
 
-        $("#lista-busqueda").change(function() {
+        $("#search-list").change(function() {
 
-            var texto = $(this).val();
+            var text = $(this).val();
 
-            var pais = buscarPaisPorNombre(texto);
+            var country = searchCountryByName(text);
 
-            if (pais) {
+            if (country) {
 
-                irAPais(pais);
+                goToCountry(country);
 
             } else {
 
-                var marca = buscarMarca(texto);
+                var marker = searchMarker(text);
 
-                if (marca) {
+                if (marker) {
 
-                    google.maps.event.trigger(marca.marca, 'click');
+                    google.maps.event.trigger(marker.marker, 'click');
 
                 }
 
@@ -429,25 +425,25 @@ function inicializarMapa(mapa_canvas) {
 
         });
 
-        $("#buscar-button").click(function() {
+        $("#search-button").click(function() {
 
-            var texto = $("#buscar-input").val();
+            var text = $("#search-input").val();
             
-            $("#buscar-input").val("");
+            $("#search-input").val("");
 
-            var pais = buscarPaisPorNombre(texto);
+            var country = searchCountryByName(text);
 
-            if (pais) {
+            if (country) {
 
-                irAPais(pais);
+                goToCountry(country);
 
             } else {
 
-                var marca = buscarMarca(texto);
+                var marker = searchMarker(text);
 
-                if (marca) {
+                if (marker) {
 
-                    google.maps.event.trigger(marca.marca, 'click');
+                    google.maps.event.trigger(marker.marker, 'click');
 
                 } else {
 
@@ -467,13 +463,13 @@ function inicializarMapa(mapa_canvas) {
             }
         });        
 
-        $("#buscar-input").focus();
+        $("#search-input").focus();
         
-        $("#buscar-input").keyup(function(event){
+        $("#search-input").keyup(function(event){
             
             if(event.keyCode === 13){
                 
-                $("#buscar-button").click();
+                $("#search-button").click();
                 
             }
             
@@ -481,9 +477,9 @@ function inicializarMapa(mapa_canvas) {
 
         $("#centrado-link").click(function() {
 
-            mapa.setCenter(new google.maps.LatLng(20, 0));
+            map.setCenter(new google.maps.LatLng(20, 0));
 
-            mapa.setZoom(2);
+            map.setZoom(2);
 
         });
 
@@ -499,43 +495,43 @@ function inicializarMapa(mapa_canvas) {
     
     try {
 
-        var nombreAleatorio = listaParaBusqueda[Math.floor(Math.random() * listaParaBusqueda.length)];
+        var randomName = searchingList[Math.floor(Math.random() * searchingList.length)];
 
-        seleccionarLista(nombreAleatorio);
+        selectList(randomName);
 
-        var busqueda = buscar(nombreAleatorio, false);
+        var searchResult = search(randomName, false);
 
-        mapa.setCenter(new google.maps.LatLng(busqueda.latitud, busqueda.longitud));
+        map.setCenter(new google.maps.LatLng(searchResult.latitud, searchResult.longitud));
 
-        var zoom = (typeof busqueda.lugar === "undefined") ? 5 : 7;
+        var zoom = (typeof searchResult.place === "undefined") ? 5 : 7;
 
-        mapa.setZoom(zoom);
+        map.setZoom(zoom);
 
     } catch (e) {
 
-        mapa.setCenter(new google.maps.LatLng(20, 0));
+        map.setCenter(new google.maps.LatLng(20, 0));
 
-        mapa.setZoom(2);
+        map.setZoom(2);
 
     }
 
     //Crea las marcas de las fotos por todo el mapa
     
-    for (var i = 0; i < lugares.length; i++) {
+    for (var i = 0; i < places.length; i++) {
         
-        var punto = new google.maps.LatLng(lugares[i].latitud, lugares[i].longitud);
+        var position = new google.maps.LatLng(places[i].latitud, places[i].longitud);
 
-        var marca = new google.maps.Marker({
+        var marker = new google.maps.Marker({
             icon: "img/logo.png",
-            position: punto,
+            position: position,
             anchor: new google.maps.Point(15, 15),
-            title: lugares[i].lugar,
-            map: mapa
+            title: places[i].place,
+            map: map
         });
 
-        marcas[i] = {'lugar': lugares[i].lugar, 'marca': marca};
+        markers[i] = {'place': places[i].place, 'marker': marker};
 
-        unirBocadillo(marca);
+        linkBalloon(marker);
 
     }
 
