@@ -38,7 +38,7 @@ a:hover a:active {
 }
 
 a#centrado-link{
-    font-family: 'Comfortaa';
+    font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
 }
 
 /*---- LAYOUT ----*/

@@ -3,9 +3,9 @@
  */
 var path = "";
 
-var miniPicturePath = "./pictures/middle/";
+var miniPicturePath = "./pictures/balloon/";
 
-var originalPicturePath = "./pictures/original/";
+var originalPicturePath = "./pictures/lightbox/";
 
 var j = 0;
 
@@ -123,7 +123,7 @@ function renderPicture() {
 
     $('#picture-index').text(pictureIndexByPlaces[currentPlace.place] + 1);
 
-    $("#picture-background").css("background-image",'url('+path + originalPicturePath + currentPlace.pictures[pictureIndexByPlaces[currentPlace.place]].file+')');
+    $("#picture-background").css("background-image",'url('+path + miniPicturePath + currentPlace.pictures[pictureIndexByPlaces[currentPlace.place]].file+')');
 
     setupPicturePagination();
 
