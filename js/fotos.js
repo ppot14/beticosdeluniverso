@@ -33,6 +33,7 @@ var picturesJson = [
             "latitud":"40.689",
             "place":"Nueva York",
             "pictures":[
+				{"file":"nyEEUUjjjjnyjjj.jpg","date":"06-11-2013"},
 				{"file":"ny_5_20091003_1197704304.jpg"},
 				{"file":"usanewyork1_1_20071104_1753024709.jpg"},
 				{"file":"usanewyork2_2_20071104_1544999203.jpg"},
@@ -111,6 +112,15 @@ var picturesJson = [
             "pictures":[
 				{"file":"seattle_6_20071125_1927142274.jpg"}
             ]
+         },
+         {
+            "longitud":"-157.86",
+            "latitud":"21.31",
+            "place":"Honolulu",
+			"date":"06-11-2013",
+            "pictures":[
+				{"file":"honoluluPA063670.jpg","date":"06-11-2013"}
+            ]
          }
       ]
    },
@@ -178,6 +188,15 @@ var picturesJson = [
             "pictures":[
 				{"file":"egipto1_1_20071104_1282258264.jpg"},
 				{"file":"egipto2_2_20071104_2053897273.jpg"}
+            ]
+         },
+         {
+            "longitud":"31.21",
+            "latitud":"30.01",
+            "place":"Giza",
+			"date":"06-11-2013",
+            "pictures":[
+				{"file":"giza-egiptoLoperaVeteYa.jpg","date":"06-11-2013"}
             ]
          }
       ]
@@ -430,6 +449,8 @@ var picturesJson = [
             "latitud":"41.902",
             "place":"Roma",
             "pictures":[
+				{"file":"Vaticano.jpg","date":"06-11-2013"},
+				{"file":"romaBeticodelUniverso.jpg","date":"06-11-2013"},
 				{"file":"elvaticano_4_20071104_1921392348.jpg"},
 				{"file":"roma1_4_20071104_1461210137.jpg"},
 				{"file":"roma2_5_20071104_1812794458.jpg"},
@@ -500,6 +521,15 @@ var picturesJson = [
 				{"file":"paris3_7_20071104_1515505683.jpg"},
 				{"file":"paris4_8_20071104_1516408037.jpg"}
             ]
+         },
+		 {
+            "longitud":"4.36",
+            "latitud":"43.84",
+            "place":"Nimes",
+			"date":"06-11-2013",
+            "pictures":[
+				{"file":"nimesFrancia001.jpg","date":"06-11-2013"}
+            ]
          }
       ]
    },
@@ -550,6 +580,7 @@ var picturesJson = [
             "latitud":"51.499",
             "place":"Londres",
             "pictures":[
+				{"file":"londresTT8jP6Zyxy5oyW221Wl0.jpg","date":"06-10-2013"},
 				{"file":"londres1_1_20071104_1122718116.jpg"},
 				{"file":"londres2_2_20071104_1017888512.jpg"},
 				{"file":"100_1271_1_20080909_1502546236.jpg"},
@@ -591,6 +622,15 @@ var picturesJson = [
             "pictures":[
 				{"file":"winchester_12_20090119_1559713434.jpg"}
             ]
+         },
+         {
+            "longitud":"-1.26",
+            "latitud":"51.75",
+            "place":"Oxford",
+			"date":"06-11-2013",
+            "pictures":[
+				{"file":"oxfordHRAAyeCdXp2g2paVRNy80.jpg","date":"06-11-2013"}
+            ]
          }
       ]
    },
@@ -629,6 +669,24 @@ var picturesJson = [
             "place":"Auschwitz",
             "pictures":[
 				{"file":"cimg2294_1_20090119_1196251919.jpg"}
+            ]
+         },
+         {
+            "longitud":"19.94",
+            "latitud":"50.06",
+            "place":"Cracovia",
+			"date":"06-11-2013",
+            "pictures":[
+				{"file":"cracoviad4v5lsbiA4NWLj2aaJG0.jpg","date":"06-11-2013"}
+            ]
+         },
+         {
+            "longitud":"20.00",
+            "latitud":"49.34",
+            "place":"Poronin",
+			"date":"06-11-2013",
+            "pictures":[
+				{"file":"poroninPoloniaJXF8LLjujOPrM2itNx0.jpg","date":"06-11-2013"}
             ]
          }
       ]
@@ -708,6 +766,7 @@ var picturesJson = [
             "latitud":"40.417",
             "place":"Madrid",
             "pictures":[
+				{"file":"madrid001.jpg","date":"06-11-2013"},
 				{"file":"calderon1_1_20071104_1000242176.jpg"},
 				{"file":"calderon2_2_20071104_1777690252.jpg"},
 				{"file":"imagen_030_4_20080909_1619376122.jpg"}
@@ -794,6 +853,24 @@ var picturesJson = [
 				{"file":"yo_campo_del_betis_1_20081207_1329516078.jpg"},
 				{"file":"roni_verde_estadio_6_20091003_2075564595.jpg"}
             ]
+         },
+         {
+            "longitud":"-3.60",
+            "latitud":"37.18",
+            "place":"Granada",
+			"date":"06-11-2013",
+            "pictures":[
+				{"file":"granada_II.jpg","date":"06-11-2013"}
+            ]
+         },
+         {
+            "longitud":"-4.42",
+            "latitud":"36.72",
+            "place":"Malaga",
+			"date":"06-11-2013",
+            "pictures":[
+				{"file":"malaga.jpg","date":"06-11-2013"}
+            ]
          }
       ]
    },
@@ -875,7 +952,28 @@ var picturesJson = [
             "latitud":"39.923",
             "place":"Pekin",
             "pictures":[
+				{"file":"estadio-nido_de_pekin.jpg","date":"06-11-2013"},
+				{"file":"la_muralla_china_pekin.jpg","date":"06-11-2013"},
 				{"file":"pekin-china_1_20071125_1536590492.jpg"}
+            ]
+         },
+         {
+            "longitud":"114.10",
+            "latitud":"22.39",
+            "place":"Hong Kong",
+			"date":"06-11-2013",
+            "pictures":[
+				{"file":"chino_mochila_betis_hong_kong.jpg","date":"06-11-2013"}
+            ]
+         },
+         {
+            "longitud":"121.56",
+            "latitud":"25.03",
+            "place":"Taipei",
+			"date":"12-11-2013",
+            "pictures":[
+				{"file":"loloTaipeiDSC00181.jpg","date":"12-11-2013"},
+				{"file":"loloTaipeiDSC00184.jpg","date":"12-11-2013"}
             ]
          }
       ]
@@ -948,7 +1046,7 @@ var picturesJson = [
             "longitud":"-4.25",
             "latitud":"55.86",
             "place":"Glasgow",
-	    "date":"28-10-2013",
+			"date":"28-10-2013",
             "pictures":[
 				{"file":"glasgowIMAG0191.jpg","date":"28-10-2013"}
             ]

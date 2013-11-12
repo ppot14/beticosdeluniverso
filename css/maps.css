@@ -57,6 +57,7 @@ div#map_canvas{
 /*---- MAP ----*/
 div#picture-div{
 	width: 240px;
+	text-align: center;
 }
 
 div#picture-background {
