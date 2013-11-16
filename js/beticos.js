@@ -383,25 +383,36 @@ function initializeMap(mapCanvas) {
 
         map = new google.maps.Map(mapCanvas, mapOptions);
 
-        listSearch();
+    } catch (e) {
+				
+        $('.bottom-custom').notify({
+                message: { text: 'Imposible cargar mapa, error de conexión con Google Map' },
+                type: 'danger'
+        }).show();
+        
+        return null;
 
-        $("#total-number-pictures").text(picturesTotalNumber);
-        
-        $("#total-number-places").text(placesTotalNumber);
-        
-        $("#total-number-countries").text(picturesJson.length);
+    }
 
-        var $subType = $("#search-list");
-        
-        $subType.empty();
-        
-        $.each(searchingList, function() {
-            
+    listSearch();
+
+    $("#total-number-pictures").text(picturesTotalNumber);
+
+    $("#total-number-places").text(placesTotalNumber);
+
+    $("#total-number-countries").text(picturesJson.length);
+
+    var $subType = $("#search-list");
+
+    $subType.empty();
+
+    $.each(searchingList, function() {
+
             $subType.append($('<option></option>').text(this));
-            
-        });
 
-        $("#search-list").change(function() {
+    });
+
+    $("#search-list").change(function() {
 
             var text = $(this).val();
 
@@ -409,87 +420,82 @@ function initializeMap(mapCanvas) {
 
             if (country) {
 
-                goToCountry(country);
+                    goToCountry(country);
 
             } else {
 
-                var marker = searchMarker(text);
+                    var marker = searchMarker(text);
 
-                if (marker) {
+                    if (marker) {
 
-                    google.maps.event.trigger(marker.marker, 'click');
+                            google.maps.event.trigger(marker.marker, 'click');
 
-                }
+                    }
 
             }
 
-        });
+    });
 
-        $("#search-button").click(function() {
+    $("#search-button").click(function() {
 
             var text = $("#search-input").val();
-            
+
             $("#search-input").val("");
 
             var country = searchCountryByName(text);
 
             if (country) {
 
-                goToCountry(country);
+                    goToCountry(country);
 
             } else {
 
-                var marker = searchMarker(text);
+                    var marker = searchMarker(text);
 
-                if (marker) {
+                    if (marker) {
 
-                    google.maps.event.trigger(marker.marker, 'click');
+                            google.maps.event.trigger(marker.marker, 'click');
 
-                } else {
+                    } else {
 
-                    alert("Imposible encontrar un lugar o pais con ese nombre, busque en la lista");
+                            $('.bottom-custom').notify({
+                                    message: { text: 'Imposible encontrar un lugar o pais con ese nombre, intente buscar en la lista' },
+                                    type: 'danger'
+                            }).show();
 
-                    return null;
+                            return null;
 
-                }
+                    }
 
             }
 
-        });
-        
-        $("form").bind("keypress", function(e) {
+    });
+
+    $("form").bind("keypress", function(e) {
             if (e.keyCode === 13) {
-                return false;
+                    return false;
             }
-        });        
+    });        
 
-        $("#search-input").focus();
-        
-        $("#search-input").keyup(function(event){
-            
+    $("#search-input").focus();
+
+    $("#search-input").keyup(function(event){
+
             if(event.keyCode === 13){
-                
-                $("#search-button").click();
-                
-            }
-            
-        });
 
-        $("#centrado-link").click(function() {
+                    $("#search-button").click();
+
+            }
+
+    });
+
+    $("#centrado-link").click(function() {
 
             map.setCenter(new google.maps.LatLng(20, 0));
 
             map.setZoom(2);
 
-        });
-
-    } catch (e) {
-
-        alert("Imposible mostrar lugares y paises, intentelo en otro momento:\n" + e);
-
-        return null;
-
-    }
+    });
 
     //centrado aleatorio
     
