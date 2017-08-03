@@ -29,10 +29,82 @@ var mapOptions;
 
 var map;
 
-function previous() {
+$( window ).resize(function() {
+  $( "#map_canvas" ).css( {height: (window.innerHeight-300)+'px' });
+});
+
+ // Init and change handlers
+ /*
+$.address.init(function(event) {
+	console.debug('init: "'+event.value+ '"');
+	console.debug('init: {\n'+
+		'  value: '+$.address.value()+',\n'+ 
+		'  path: '+$.address.path()+',\n'+
+		'  pathNames: '+$.address.pathNames()+',\n'+
+		'  parameterNames: '+$.address.parameterNames()+',\n'+
+		'  queryString: '+$.address.queryString()+'})'
+	);
+}).change( function(event) {
+	console.debug('change: "'+event.value+ '"');
+}).internalChange(function(event) {
+	console.debug('internalChange: "' + event.value + '"');
+}).externalChange(function(event) {
+	console.debug('externalChange: "' + event.value + '"');
+	console.debug('externalChange: event.value.split: "' + JSON.stringify(event.value.split( "/" )) + '"');
+	console.debug('externalChange: event.value.split.length: "' + event.value.split( "/" ).length + '"');
+	var splitPath = event.value.split( "/" );
+	if(splitPath[1]==='Mundo'){
+	
+		$("#centrado-link").click();
+		
+	}else if(splitPath.length === 2){
+	
+		var countryText = splitPath[1].replace( "_", " " );
+	
+		console.debug('countryText: ' + countryText);
+	
+		var country = searchCountryByName(countryText);
+		
+		if (country) {
+		
+			goToCountry(country);
+			
+		}else{
+			alert("Imposible encontrar un pais con ese nombre, centrado automatico: "+ countryText);
+			
+			$("#centrado-link").click();
+		}
+		
+	}else if(splitPath.length === 3){
+	
+		var placeText = splitPath[2].replace( "_", " " );
+	
+		console.debug('placeText: ' + placeText);
+	
+		var marker = searchMarker(placeText);
+
+		if (marker) {
+
+			google.maps.event.trigger(marker.marker, 'click');
+
+		} else {
+
+			alert("Imposible encontrar un lugar con ese nombre, centrado automatico: "+ placeText);
+			
+			$("#centrado-link").click();
+
+		}
+		
+	}else{
+		console.debug('default externalChange');
+	}
+});
+*/
+
+/*function previous() {
 
     pictureIndexByPlaces[currentPlace.place] = pictureIndexByPlaces[currentPlace.place] - 1;
-
+	
     renderPicture();
 
 }
@@ -50,11 +122,8 @@ function setupPicturePagination() {
     if (currentPlace.pictures.length === 1) {
 
         $("#siguiente").addClass("disabled");
-
         $("#anterior").addClass("disabled");
-
         $('#link-previous').unbind('click');
-        
         $('#link-next').unbind('click');
 
     } else {
@@ -62,64 +131,47 @@ function setupPicturePagination() {
         if (pictureIndexByPlaces[currentPlace.place] === currentPlace.pictures.length - 1) {
 
             $("#siguiente").addClass("disabled");
-
             $("#anterior").removeClass("disabled");
-
             $('#link-previous').unbind('click');
-            
             $('#link-next').unbind('click');
 
             $("#link-previous").click(function() {
-                
                 previous();
-                
             });
 
         } else if (pictureIndexByPlaces[currentPlace.place] === 0) {
 
             $("#anterior").addClass("disabled");
-
             $("#siguiente").removeClass("disabled");
-
             $('#link-previous').unbind('click');
-            
             $('#link-next').unbind('click');
-
+			
             $("#link-next").click(function() {
-                
                 next();
-                
             });
 
         } else {
 
             $("#siguiente").removeClass("disabled");
-
             $("#anterior").removeClass("disabled");
-
             $('#link-previous').unbind('click');
-            
             $('#link-next').unbind('click');
 
             $("#link-previous").click(function() {
-                
                 previous();
-                
             });
 
             $("#link-next").click(function() {
-                
                 next();
-                
             });
 
         }
 
     }
 
-}
+}*/
 
-function renderPicture() {
+/*function renderPicture() {
 
     $('#picture-index').text(pictureIndexByPlaces[currentPlace.place] + 1);
 
@@ -127,9 +179,9 @@ function renderPicture() {
 
     setupPicturePagination();
 
-}
+}*/
 
-function getPictureTitle(index){
+/*function getPictureTitle(index){
     
     var pictureDate =  currentPlace.pictures[index].date;
 
@@ -143,9 +195,9 @@ function getPictureTitle(index){
 
     return title;
     
-}
+}*/
 
-function initializeBalloon(placeName) {
+/*function initializeBalloon(placeName) {
 
     //InfoWindow initialization
     currentPlace = search(placeName, true);
@@ -163,7 +215,9 @@ function initializeBalloon(placeName) {
     //Render first picture
     renderPicture();
 
-    $("#link-country").click(function() {
+    $("#link-country").click(function(e) {
+	
+		console.debug('link-country '+e);
 
         $("#picture-div").appendTo("#invisible");
 
@@ -173,36 +227,27 @@ function initializeBalloon(placeName) {
 
     });
 
-}
+}*/
 
 function listSearch() {
 
     var numCountries = picturesJson.length;
-
     var numCountriesPlaces = 0;
-
     var numPlaces = 0;
-
     var numPitures = 0;
 
     for (var i = 0; i < numCountries; i++) {
 
         searchingList[numCountriesPlaces] = picturesJson[i].country;
-
         numCountriesPlaces++;
-
         var numCountriesPlacesTemp = picturesJson[i].places.length;
 
         for (var j = 0; j < numCountriesPlacesTemp; j++) {
 
             searchingList[numCountriesPlaces] = picturesJson[i].places[j].place;
-
             places[numPlaces] = picturesJson[i].places[j];
-
             numPitures = numPitures + picturesJson[i].places[j].pictures.length;
-
             numCountriesPlaces++;
-
             numPlaces++;
 
         }
@@ -210,9 +255,7 @@ function listSearch() {
     }
 
     searchingList.sort();
-
     placesTotalNumber = numPlaces;
-
     picturesTotalNumber = numPitures;
 
 }
@@ -309,6 +352,8 @@ function searchCountryByName(text) {
 
 function goToCountry(country) {
 
+	//console.debug('goToCountry '+country);
+	
     map.setCenter(new google.maps.LatLng(country.latitud, country.longitud));
 
     var zoom = 5;
@@ -321,17 +366,35 @@ function goToCountry(country) {
 
 function linkBalloon(marker) {
 
-    google.maps.event.addListener(marker, 'click', function() {
+    google.maps.event.addListener(marker, 'click', function(e) {
+	
+		//console.debug('marker click '+e);
 
-        if (infoWindow) {
+        /*if (infoWindow) {
 
             $("#picture-div").appendTo("#invisible");
 
             infoWindow.close();
 
-        }
+        }*/
 
-        initializeBalloon(marker.title);
+        //initializeBalloon(marker.title);
+		
+		currentPlace = search(marker.title, true);
+		
+		lightGalleryPayload = [];
+		for(var i=0,n=currentPlace.pictures.length; i<n; i++){
+			lightGalleryPayload.push({
+            'src': originalPicturePath + currentPlace.pictures[i].file, 
+            'thumb': miniPicturePath + currentPlace.pictures[i].file,
+            'subHtml': searchCountryByPlace(currentPlace.place).country+' - '+currentPlace.place
+			});
+		}
+		$(this).lightGallery({
+			dynamic: true,
+			thumbnail:true,
+			dynamicEl: lightGalleryPayload
+		})
 
         selectList(marker.title);
 
@@ -339,7 +402,7 @@ function linkBalloon(marker) {
 
         map.setZoom(7);
 
-        infoWindow = new google.maps.InfoWindow({
+        /*infoWindow = new google.maps.InfoWindow({
             
             content: document.getElementById("picture-div")
             
@@ -351,7 +414,7 @@ function linkBalloon(marker) {
 
             $("#picture-div").appendTo("#invisible");
 
-        });
+        });*/
 
     });
 }
@@ -372,6 +435,8 @@ function selectList(name) {
 }
 
 function initializeMap(mapCanvas) {
+	
+	$( "#map_canvas" ).css( {height: (window.innerHeight-300)+'px' });
 
     try {
 
@@ -384,118 +449,138 @@ function initializeMap(mapCanvas) {
         map = new google.maps.Map(mapCanvas, mapOptions);
 
     } catch (e) {
-				
-        $('.bottom-custom').notify({
-                message: { text: 'Imposible cargar mapa, error de conexión con Google Map' },
-                type: 'danger'
-        }).show();
-        
+
+        //alert("Imposible mostrar lugares y paises, intentelo en otro momento:\n" + e);
+		
+		$.notify({
+					message:'Imposible cargar mapa, error de conexión con Google Map'
+				},{
+					type: 'danger',
+					placement: {
+						from: "top",
+						align: "center"
+					}
+				});		
+		
         return null;
 
     }
 
-    listSearch();
+	listSearch();
 
-    $("#total-number-pictures").text(picturesTotalNumber);
+	$("#total-number-pictures").text(picturesTotalNumber);
+	$("#total-number-places").text(placesTotalNumber);
+	$("#total-number-countries").text(picturesJson.length);		
 
-    $("#total-number-places").text(placesTotalNumber);
+	var $subType = $("#search-list");
+	
+	$subType.empty();
+	
+	$.each(searchingList, function() {
+		
+		$subType.append($('<option></option>').text(this));
+		
+	});
 
-    $("#total-number-countries").text(picturesJson.length);
+	$("#search-list").change(function() {
 
-    var $subType = $("#search-list");
+		var text = $(this).val();
+		
+		var country = searchCountryByName(text);
 
-    $subType.empty();
+		if (country) {
+			
+			goToCountry(country);
 
-    $.each(searchingList, function() {
+		} else {
 
-            $subType.append($('<option></option>').text(this));
+			var marker = searchMarker(text);
 
-    });
+			if (marker) {
 
-    $("#search-list").change(function() {
+				google.maps.event.trigger(marker.marker, 'click');
 
-            var text = $(this).val();
+			}
 
-            var country = searchCountryByName(text);
+		}
 
-            if (country) {
+	});
 
-                    goToCountry(country);
+	$("#search-button").click(function() {
 
-            } else {
+		var text = $("#search-input").val();
+		
+		//console.log('searching for: '+text);
+		
+		//$("#search-input").val("");
 
-                    var marker = searchMarker(text);
+		var country = searchCountryByName(text);
 
-                    if (marker) {
+		if (country) {
+		
+			//console.log('country found: '+country);
 
-                            google.maps.event.trigger(marker.marker, 'click');
+			goToCountry(country);
 
-                    }
+		} else {
 
-            }
+			var marker = searchMarker(text);
 
-    });
+			if (marker) {
+				
+				//console.log('place found: '+marker);
 
-    $("#search-button").click(function() {
+				google.maps.event.trigger(marker.marker, 'click');
 
-            var text = $("#search-input").val();
+			} else {
 
-            $("#search-input").val("");
+				//alert("Imposible encontrar un lugar o pais con ese nombre, busque en la lista");
 
-            var country = searchCountryByName(text);
+                $.notify({
+							message:'Imposible encontrar un lugar o pais con ese nombre, intente buscar en la lista'
+						},{
+							type: 'danger',
+							placement: {
+								from: "top",
+								align: "center"
+							}
+						});
 
-            if (country) {
+				return null;
 
-                    goToCountry(country);
+			}
 
-            } else {
+		}
 
-                    var marker = searchMarker(text);
+	});
+	
+	$("form").bind("keypress", function(e) {
+		if (e.keyCode === 13) {
+			return false;
+		}
+	});        
 
-                    if (marker) {
+	$("#search-input").focus();
+	
+	$("#search-input").keyup(function(event){
+		
+		if(event.keyCode === 13){
+			
+			$("#search-button").click();
+			
+		}
+		
+	});
 
-                            google.maps.event.trigger(marker.marker, 'click');
+	$("#centrado-link").click(function(e) {
+	
+		//$.address.value($(this).attr('href'));
 
-                    } else {
+		map.setCenter(new google.maps.LatLng(20, 0));
 
-                            $('.bottom-custom').notify({
-                                    message: { text: 'Imposible encontrar un lugar o pais con ese nombre, intente buscar en la lista' },
-                                    type: 'danger'
-                            }).show();
+		map.setZoom(2);
 
-                            return null;
-
-                    }
-
-            }
-
-    });
-
-    $("form").bind("keypress", function(e) {
-            if (e.keyCode === 13) {
-                    return false;
-            }
-    });        
-
-    $("#search-input").focus();
-
-    $("#search-input").keyup(function(event){
-
-            if(event.keyCode === 13){
-
-                    $("#search-button").click();
-
-            }
-
-    });
-
-    $("#centrado-link").click(function() {
-
-            map.setCenter(new google.maps.LatLng(20, 0));
-
-            map.setZoom(2);
-
-    });
+	});
 
     //centrado aleatorio
     
@@ -540,5 +625,14 @@ function initializeMap(mapCanvas) {
         linkBalloon(marker);
 
     }
+	
+	  var hash = location.hash;
+	  hash = hash.replace( /^#/, "" );
+	  if(hash && hash!=''){
+		  $("#search-input").val(hash);
+		  //console.log('hash: '+hash);
+		  $("#search-button").click();
+	  }
 
 }
+

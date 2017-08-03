@@ -1,5 +1,5 @@
 body {
-    background-color: transparent;
+background-color: transparent;
 }
 
 .row {
@@ -10,19 +10,19 @@ body {
 .navbar {
     margin-top: 10px;
     margin-bottom: 10px;
-}
+	}
 .navbar .navbar-brand{	
-    color: #4CAE4C;
-    font-size: 30px;
-    padding: 14px;
-}
+	color:#4CAE4C;
+	font-size: 22px;
+	}
 	
 .navbar .navbar-brand	img {
     vertical-align: top;
+	display: inline-block;
 }
 
 p.text-center{
-    margin: 0 0 5px;
+	margin: 0 0 5px;
 }
 
 .bootstrap-select.btn-group, .bootstrap-select.btn-group[class*="span"] {
@@ -51,12 +51,12 @@ div#map_canvas{
     border-radius: 4px 4px 4px 4px;
     -moz-border-radius: 4px;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px rgba(0, 0, 0, 0.075);
-    margin: 0 0 10px;
+	margin: 0 0 10px;
 }
 
 /*---- MAP ----*/
 div#picture-div{
-	width: 240px;
+	/*width: 240px;*/
 	text-align: center;
 }
 
@@ -98,4 +98,5 @@ div#picture-navigator {
 div#picture-navigator .pager{
     margin: 5px;
 }
+
 

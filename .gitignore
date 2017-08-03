@@ -1,3 +1,10 @@
-/imagenes/
-/nbproject/private/
-/pictures/
+/target/
+/.settings/
+/.classpath
+/.gitignore
+/.project
+BingSiteAuth.xml
+CookiesBeticosdelUniverso.pdf
+google770ca9c7a5abd579.html
+/js/fotos.js
+/pictures
